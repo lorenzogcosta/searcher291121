@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/lorenzogcosta/searcher291121/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/lorenzogcosta/searcher291121/static/js/main.0398321c.chunk.js",
-    "main.js.map": "/lorenzogcosta/searcher291121/static/js/main.0398321c.chunk.js.map",
-    "runtime-main.js": "/lorenzogcosta/searcher291121/static/js/runtime-main.b880b38c.js",
-    "runtime-main.js.map": "/lorenzogcosta/searcher291121/static/js/runtime-main.b880b38c.js.map",
-    "static/js/2.701f3408.chunk.js": "/lorenzogcosta/searcher291121/static/js/2.701f3408.chunk.js",
-    "static/js/2.701f3408.chunk.js.map": "/lorenzogcosta/searcher291121/static/js/2.701f3408.chunk.js.map",
-    "static/js/3.ee286fa0.chunk.js": "/lorenzogcosta/searcher291121/static/js/3.ee286fa0.chunk.js",
-    "static/js/3.ee286fa0.chunk.js.map": "/lorenzogcosta/searcher291121/static/js/3.ee286fa0.chunk.js.map",
-    "index.html": "/lorenzogcosta/searcher291121/index.html",
-    "static/css/main.8c8b27cf.chunk.css.map": "/lorenzogcosta/searcher291121/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.701f3408.chunk.js.LICENSE.txt": "/lorenzogcosta/searcher291121/static/js/2.701f3408.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/lorenzogcosta/searcher291121/static/media/logo.6ce24c58.svg"
+    "main.css": "/searcher291121/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/searcher291121/static/js/main.0398321c.chunk.js",
+    "main.js.map": "/searcher291121/static/js/main.0398321c.chunk.js.map",
+    "runtime-main.js": "/searcher291121/static/js/runtime-main.c9337b62.js",
+    "runtime-main.js.map": "/searcher291121/static/js/runtime-main.c9337b62.js.map",
+    "static/js/2.701f3408.chunk.js": "/searcher291121/static/js/2.701f3408.chunk.js",
+    "static/js/2.701f3408.chunk.js.map": "/searcher291121/static/js/2.701f3408.chunk.js.map",
+    "static/js/3.ee286fa0.chunk.js": "/searcher291121/static/js/3.ee286fa0.chunk.js",
+    "static/js/3.ee286fa0.chunk.js.map": "/searcher291121/static/js/3.ee286fa0.chunk.js.map",
+    "index.html": "/searcher291121/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/searcher291121/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.701f3408.chunk.js.LICENSE.txt": "/searcher291121/static/js/2.701f3408.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/searcher291121/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.b880b38c.js",
+    "static/js/runtime-main.c9337b62.js",
     "static/js/2.701f3408.chunk.js",
     "static/css/main.8c8b27cf.chunk.css",
     "static/js/main.0398321c.chunk.js"
