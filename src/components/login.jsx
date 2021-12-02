@@ -10,7 +10,7 @@ export default function loginArea() {
         <div className="loginArea">
             <form action="" className="formLogin">
             <h2 className="loginH2">Login</h2>
-            <input type="text" placeholder="Usuário" />
+            <input type="email" placeholder="Usuário" className="inputs" />
             <input type="password" placeholder="Senha" />
             <button>ACESSAR</button>
             </form>
