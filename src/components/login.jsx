@@ -1,7 +1,9 @@
-// LOGIN PAGE DESIGN
+// ------------- LOGIN PAGE DESIGN -----------------
 import React from "react";
 import './login.css';
 
+
+// ---------------LOGIN-AREA RENDERIZATION--------------------
 
 export default function loginArea() {
     return (

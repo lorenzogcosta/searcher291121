@@ -9,6 +9,7 @@ body {
 
 }
 
+/*---------------LOGIN-AREA BACKDROP-----------------  */
 
 .loginArea {
     display: flex;
@@ -19,6 +20,8 @@ body {
    
 }
 
+
+/* --------------FORM-LOGIN STYLE--------------------*/
 .formLogin {
     align-self: center;
     margin-top: 10vh;
@@ -38,7 +41,7 @@ body {
 }
 
 
-
+/* -----------INPUTS USER AND PASSWORD STYLE----------------- */
 .loginArea input {
     border-top-style: hidden;
     border-right-style: hidden;
@@ -52,6 +55,7 @@ body {
     border-color: rgba(255,255,255, 0.4);
 }
 
+/*---------------FORM BUTTON STYLE-------------- */
 .loginArea button{
     margin-top: 50px;
     color:black;
@@ -69,6 +73,8 @@ body {
 
 
 }
+
+/*---------------- TABLET AND NAVIGATOR RESPONSIVE ------------*/
 
 @media screen and (min-width: 768px) {
 
