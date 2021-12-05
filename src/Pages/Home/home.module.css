@@ -1,5 +1,79 @@
+/*---------------Header---------------*/
+
+.header {
+    height: 90vh;
+    width: 100vw;
+    background: url(../../images/hero-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header .headerContent {
+    width: 75%;
+    height: calc(100vh - 90px);
+    margin: auto;
+    display: flex;
+    flex-flow: column;
+}
+
+.header .headerContent .titles h1 {
+    margin-top: 200px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 3.5rem;
+    width: 55%;
+    color: #FFF;
+    font-weight: 700;
+}
+
+.header .headerContent .titles h2 {
+    font-weight: 400;
+    width: 45%;
+    color: #FFF;
+}
+
+/*---------------Search Input---------------*/
+
+.header .headerContent form {
+    margin: 25vh auto 0;
+    width: 60%;
+    max-width: 860px;
+    min-width: 620px;
+    display: flex;
+    background-color: #1E3E7B;
+    border-radius: 100px;
+}
+
+.header .headerContent form button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.header .headerContent form button img {
+    padding: 25px;
+}
+
+.header .headerContent form .inputSearch {
+    height: 100%;
+    width: calc(100% - 30px);
+    font-size: 2rem;
+    color: white;
+    border: none;
+    background-color: transparent;
+}
+
+.header .headerContent form .inputSearch::placeholder {
+    color: var(--gray);
+    font-size: 2rem;
+}
+
+
+
+/*---------------Home Content---------------*/
+
 .homeContent {
-    width: 90%;
+    width: 100%;
+    background-color: #0A1744;
     margin-left: auto;
     margin-right: auto;
 }
