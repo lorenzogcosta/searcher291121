@@ -1,0 +1,103 @@
+/*------------------Navigation Bar------------------*/
+
+.navbar {
+    width: 100vw;
+    height: 117px;
+    background-color: #0A1744; 
+    box-shadow: 0px 3px 29px #5538EE1F;
+    -moz-box-shadow: 0px 3px 29px #5538EE1F;
+    -webkit-box-shadow: 0px 3px 29px #5538EE1F;
+    opacity: 1;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+}
+
+.navbar .container {
+    max-width: 1200px;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 117px;
+}
+
+nav {
+    width: 400px;
+    display: flex;
+}
+
+nav ul {
+    display: flex;
+    margin-right: 10px;
+} 
+
+.logo {
+    width: 240px;
+    font-size: 35px;
+    color: white;
+}
+
+span {
+    font-family: 'Rubik', sans-serif;
+    color: #FFF;
+    font-weight: 700;
+}
+
+ .itemOne, .itemTwo, .itemOneHome, .itemTwoLogOut {
+    width: 170px;
+    height: 49px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 17px;
+    border-radius: 25px;
+    opacity: 1;
+    text-transform: uppercase;
+    font-weight: 700;
+} 
+
+.itemOne, .itemOneHome {
+    background-color: #72EFDB;
+    color: #0B1741;
+    box-shadow: 0px 3px 6px #5538EE29;
+    margin: 0px 20px;
+}
+
+.itemOne, .itemOneHome a {
+    color: #0B1741;
+}
+
+.aboutIcon {
+    width: 13px;
+    height: 13px;
+    margin-left: 3vw;
+    padding-top: 18px;
+}
+
+.itemTwo, .itemTwoLogOut {
+    background-color: #1E3E7B;
+    color: #FFF;
+}
+
+.itemTwo, .itemTwoLogOut a {
+    color: #FFF;
+}
+
+.loginIcon {
+    width: 13px;
+    height: 13px;
+    margin-left: 3vw;
+    padding-top: 18px;
+}
+
+.homeIcon {
+    width: 13px;
+    height: 13px;
+    margin-left: 3vw;
+    padding-top: 18px;
+}
+
+.logoutIcon {
+    width: 13px;
+    height: 13px;
+    margin-left: 3vw;
+    padding-top: 18px;
+}
