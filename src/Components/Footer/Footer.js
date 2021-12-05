@@ -1,10 +1,14 @@
 import React from 'react'
 
+import styles from './footer.module.css'
+
 
 const Footer = () => {
 
     return ( 
-            <p>Rodapé</p>
+        <div className={styles.footer}>
+            <span>@Newtab Academy {new Date().getFullYear()}.&nbsp;&nbsp;Todos os direitos reservados</span>
+        </div>
     )
 
 }
