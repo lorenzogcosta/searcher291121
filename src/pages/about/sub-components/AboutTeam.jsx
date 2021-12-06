@@ -5,6 +5,8 @@ import AboutMembers from '../sub-components/AboutMembers';
 
 //Imagens
 import Joane from '../../../assets/profile/joane.jpg';
+import Esther from '../../../assets/profile/Esther.jpg';
+import Lorenzo from '../../../assets/profile/Lorenzo.jpg';
 
 const AboutTeam = () => {
     return (
@@ -14,11 +16,11 @@ const AboutTeam = () => {
         <div className="about-team__members">
 
             <AboutMembers
-                // foto={Esther}
+                foto={Esther}
                 nome="Esther Valentin Bacelar"
                 texto="Trabalhei no desenvolvimento da Home, em HTML, CSS, JS e React"
-                git=""
-                email=""
+                git="https://github.com/esthervbac"
+                email="esther.v.bacelar@gmail.com"
                 linkedin="https://www.linkedin.com/in/esther-valentim-bacelar/"
             />
 
@@ -32,11 +34,11 @@ const AboutTeam = () => {
             />
 
             <AboutMembers
-                // foto={Lorenzo}
+                foto={Lorenzo}
                 nome="Lorenzo Costa "
-                texto="Contribui com o desenvolvimento do HTML, CSS e Java Script da página Login"
+                texto="Contribui com o desenvolvimento do HTML, CSS e Java Script da página Login e página de buscas."
                 git="https://github.com/lorenzogcosta"
-                email=""
+                email="lorenzocostasan94@gmail.com"
                 linkedin="https://www.linkedin.com/in/lorenzogcosta/-mour%C3%A3o-ba0756a3/"
             />
           </div>
