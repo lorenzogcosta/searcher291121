@@ -1,6 +1,8 @@
 import React from 'react'
 
 import NavBar from '../../Components/NavBar/NavBar'
+import ImagesResults from '../../Components/ImagesResults/ImagesResults'
+import TweetsResults from '../../Components/TweetsResults/TweetsResults'
 import Footer from '../../Components/Footer/Footer'
 
 import styles from '../Home/home.module.css'
@@ -33,7 +35,36 @@ const Home = () => {
                     </form>
                 </div>
             </div>
+            <div className={styles.mobileTabs}>
+                <div className={styles.changingResults}>
+                    <span>Tweets</span>
+                    <span>Imagens</span>
+
+                </div>
+                <div className={styles.tabs}>
+                    <div></div>
+                </div>
+            </div>
             <div className={styles.homeContent}>
+                <h2>Exibindo os 10 resultados mais recentes para #</h2>
+                <div className={styles.content}>
+                    <div className={styles.imagesResults}>
+                        <ImagesResults/>
+                    </div>
+                    <div className={styles.tweetsResults}>
+                        <TweetsResults/>
+                    </div>
+
+                </div>
+                <div className={styles.contentResponsive}>
+                    <div className={styles.imagesResults}>
+                        <ImagesResults/>
+                    </div>
+                    <div className={styles.tweetsResults}>
+                        <TweetsResults/>
+                    </div>
+
+                </div>
             </div>
             <Footer />
         </>

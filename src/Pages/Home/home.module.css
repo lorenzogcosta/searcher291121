@@ -71,9 +71,70 @@
 
 /*---------------Home Content---------------*/
 
-.homeContent {
-    width: 100%;
-    background-color: #0A1744;
-    margin-left: auto;
-    margin-right: auto;
+.mobileTabs {
+    margin-top: -150px;
+    height: 350px;
+    background-image: linear-gradient(to bottom, transparent 0%, #0A1744 40%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+.mobileTabs .changingResults {
+    display: none;
+}
+
+.homeContent {
+    margin-top: -140px;
+    width: 100vw;
+    background-color: #0A1744;
+}
+
+.homeContent h2 {
+    font-family: 'Rubik', sans-serif;
+    color: #FFFFFF;
+    font-size: 32px;
+    padding-top: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.homeContent ul li {
+    list-style: none;
+}
+
+.homeContent .content {
+    margin: auto;
+    padding: 80px 0;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    background: transparent;
+}
+
+.homeContent .contentResponsive {
+    display: none;
+}
+
+.homeContent .content .imagesResults {
+    width: 41%;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.homeContent .content .imagesResults ul {
+    width: 100%;
+}
+
+.homeContent .content .imagesResults ul li {
+    display: inline-table;
+}
+
+.homeContent .content .tweetsResults {
+    width: 55%;
+}
+
+/*---------------Media Queries---------------*/
+
