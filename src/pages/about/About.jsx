@@ -1,8 +1,16 @@
 import React from 'react';
 
+import AboutProject from './sub-components/AboutProject';
+import AboutTeam from './sub-components/AboutTeam';
+
 const About = () => {
     return (
-        <h1>Sobre</h1>
+        <div className='about' >
+            <AboutProject/>
+            <AboutTeam/>
+            
+        </div>
+       
     )
 }
 

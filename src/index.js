@@ -8,7 +8,8 @@ import Login from './pages/login/Login'
 
 // Importação Router
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-//Renderização de páginas//
+
+//Import Router//
 ReactDOM.render(
   < BrowserRouter>
     <Routes>
