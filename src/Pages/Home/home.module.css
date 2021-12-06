@@ -23,6 +23,8 @@
     width: 55%;
     color: #FFF;
     font-weight: 700;
+    opacity: 1;
+    letter-spacing: 1.6px;
 }
 
 .header .headerContent .titles h2 {

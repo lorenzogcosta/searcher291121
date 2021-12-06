@@ -49,19 +49,27 @@ const Home = () => {
                 <h2>Exibindo os 10 resultados mais recentes para #</h2>
                 <div className={styles.content}>
                     <div className={styles.imagesResults}>
-                        <ImagesResults/>
+                        <ul>
+                            <li><ImagesResults/></li>
+                        </ul>
                     </div>
                     <div className={styles.tweetsResults}>
-                        <TweetsResults/>
+                        <ul>
+                            <li><TweetsResults/></li>
+                        </ul>
                     </div>
 
                 </div>
                 <div className={styles.contentResponsive}>
                     <div className={styles.imagesResults}>
-                        <ImagesResults/>
+                        <ul>
+                            <li><ImagesResults/></li>
+                        </ul>
                     </div>
                     <div className={styles.tweetsResults}>
-                        <TweetsResults/>
+                        <ul>
+                            <li><TweetsResults/></li>
+                        </ul>
                     </div>
 
                 </div>

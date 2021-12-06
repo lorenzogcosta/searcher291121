@@ -37,18 +37,33 @@
 }
 
 .tweetsResults .tweetsResultsContent .tweetsContainer h1 {
+    font-family: 'Rubik', sans-serif;
+    color: #FFFFFF;
     margin-bottom: 5px;
     font-size: 1.7rem;
 }
 
 .tweetsResults .tweetsResultsContent .tweetsContainer h1 span { 
-    color: #757D97;
+    font-family: 'Rubik', sans-serif;
+    color: #FFFFFF;
     font-weight: 400;
     font-size: 1rem;
+    opacity: 0.43;
+    margin-left: 1vw;
+}
+
+.tweetsResults .tweetsResultsContent .tweetsContainer p {
+    font-family: 'Rubik', sans-serif;
+    color: #D9D9D9;
+    font-size: 19px;
 }
 
 .tweetsResults .linkContainer {
-    padding-left: 10%;
+    font-family: 'Rubik', sans-serif;
+    color: #72EFDB;
+    font-size: 20px;
+    padding-left: 22%;
+    margin-bottom: 5vh;
 }
 
 .tweetsResults .linkContainer a {
