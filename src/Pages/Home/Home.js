@@ -1,13 +1,13 @@
 import React from 'react'
 
-import NavBar from '../../Components/NavBar/NavBar'
-import ImagesResults from '../../Components/ImagesResults/ImagesResults'
-import TweetsResults from '../../Components/TweetsResults/TweetsResults'
-import Footer from '../../Components/Footer/Footer'
+import NavBar from './sub-components/NavBar'
+import ImagesResults from './sub-components/ImagesResults'
+import TweetsResults from './sub-components/TweetsResults'
+import Footer from './sub-components/Footer'
 
-import styles from '../Home/home.module.css'
+import styles from './Home.module.css'
 
-import iconSearch from '../../images/icon-search.svg'
+import iconSearch from '../../assets/svg/icon-search.svg'
 
 
 const Home = () => {

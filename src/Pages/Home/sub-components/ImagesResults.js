@@ -1,8 +1,8 @@
 import React from 'react'
 
-import styles from './imagesresults.module.css'
+import styles from './ImagesResults.module.css'
 
-import imagemTeste from '../../images/images.jpg'
+import imagemTeste from '../../../assets/images.jpg'
 
 const ImagesResults = () => {
 

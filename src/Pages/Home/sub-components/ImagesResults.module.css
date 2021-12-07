@@ -1,4 +1,5 @@
 .imagesResults {
+    position: relative;
     width: 520px;
     margin-top: -3vh;
     margin-left: -4vw;

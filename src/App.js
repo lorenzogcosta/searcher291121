@@ -1,11 +1,10 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
-import Home from './Pages/Home/Home'
-import Erro404 from './Pages/Erro404/Erro404'
-// import About from './Pages/About/About'
-// import Login from './Pages/Login/Login'
-// import SearchList from './Pages/SearchList/SearchList'
+import Home from './pages/home/Home'
+// import About from './pages/about/About'
+// import Login from './pages/login/Login'
+// import SearchList from './pages/searchlist/SearchList'
 
 
 function App() {
@@ -17,7 +16,6 @@ function App() {
             {/* <Route path="/sobre" element={<About />} />
             <Route path="/login" element={<Login />} />
             <Route path="/lista-de-busca" exact element={<SearchList />} />  */}
-            <Route element={<Erro404 />} />
         </Routes>
     </Router>
     </div>

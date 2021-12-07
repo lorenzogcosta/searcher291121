@@ -3,7 +3,7 @@
 .header {
     height: 90vh;
     width: 100vw;
-    background: url(../../images/hero-bg.jpg);
+    background: url(../../assets/hero-bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
