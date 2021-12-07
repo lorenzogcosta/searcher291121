@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import reportWebVitals from './reportWebVitals';
-import Login from './components/login'
-// import './components/login.css'
+// import Login from './components/login/login';
+import Results from './components/search-list/list-results.jsx'
+
 
 ReactDOM.render(
   <React.StrictMode>
 
-        <Login />
+        {/* <Login /> */}
+        <Results />
 
   </React.StrictMode>,
   document.getElementById('root')
