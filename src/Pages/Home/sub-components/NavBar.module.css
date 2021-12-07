@@ -24,6 +24,7 @@
 nav {
     width: 400px;
     display: flex;
+    padding-right: 40px;
 }
 
 nav ul {
@@ -35,6 +36,7 @@ nav ul {
     width: 240px;
     font-size: 35px;
     color: white;
+    padding-left: 20px;
 }
 
 span {
@@ -104,3 +106,44 @@ span {
 
 
 /*------------------Media Queries------------------*/
+
+@media screen and (max-width: 2560px) {
+    .aboutIcon {
+        margin-left: 1.7vw;
+    }
+
+    .loginIcon {
+        margin-left: 1.7vw; 
+    }
+    
+}
+
+@media screen and (max-width: 1440px) {
+    .aboutIcon {
+        margin-left: 2.4vw;
+    }
+
+    .loginIcon {
+        margin-left: 2.4vw; 
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .aboutIcon {
+        margin-left: 2.8vw;
+    }
+
+    .loginIcon {
+        margin-left: 2.8vw; 
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .aboutIcon {
+        margin-left: 4vw;
+    }
+
+    .loginIcon {
+        margin-left: 4vw;
+    }
+}

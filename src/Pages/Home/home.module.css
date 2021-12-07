@@ -140,3 +140,107 @@
 
 /*---------------Media Queries---------------*/
 
+@media screen and (max-width: 2560px) {
+    .header .headerContent .titles h1 {
+        width: 30%;
+        margin-top: 35vh;
+        margin-bottom: 2vh;
+    }
+
+    .header .headerContent .titles h2 {
+        width: 25%;
+    }
+
+    .header .headerContent form {
+        margin-top: 20vh;
+    }
+}
+
+
+@media screen and (max-width: 1920px) {
+    .header .headerContent .titles h1 {
+        width: 40%;
+        margin-top: 30vh;
+    }
+
+    .header .headerContent .titles h2 {
+        width: 35%;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .header .headerContent .titles h1 {
+        width: 55%;
+        margin-top: 20vh;
+    }
+
+    .header .headerContent .titles h2 {
+        width: 45%;
+    }
+
+    .header .headerContent form {
+        margin-top: 25vh;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .header .headerContent .titles h1 {
+        width: 55%;
+        margin-top: 30vh;
+    }
+
+    .header .headerContent form {
+        margin-top: 28vh;
+    }
+
+    .homeContent h2 {
+        margin-top: 13vh;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .header .headerContent .titles h1 {
+        width: 60%;
+        margin-top: 20vh;
+    }
+
+    .header .headerContent .titles h2 {
+        width: 50%;
+    }
+
+    .header .headerContent form {
+        margin-top: 21vh;
+    }
+
+    .homeContent h2 {
+        margin-top: 5vh;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .header .headerContent .titles h1 {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header .headerContent .titles h1 {
+        font-size: 40px;
+        width: 75%;
+        margin-top: 20vh;
+    }
+
+    .header .headerContent .titles h2 {
+        width: 60%;
+        font-size: 17px;
+    }
+
+    .header .headerContent form {
+        margin-top: 21vh;
+    }
+
+    .homeContent h2 {
+        margin-top: 5vh;
+        font-size: 25px;
+    }
+}
