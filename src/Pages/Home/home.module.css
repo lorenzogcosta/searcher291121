@@ -5,7 +5,7 @@
     width: 100vw;
     background: url(../../assets/hero-bg.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
 }
 
 .header .headerContent {
@@ -68,8 +68,6 @@
     color: var(--gray);
     font-size: 2rem;
 }
-
-
 
 /*---------------Home Content---------------*/
 
@@ -154,6 +152,10 @@
     .header .headerContent form {
         margin-top: 20vh;
     }
+
+    .homeContent .content {
+        width: 50%;
+    }
 }
 
 
@@ -165,6 +167,10 @@
 
     .header .headerContent .titles h2 {
         width: 35%;
+    }
+
+    .header .headerContent form {
+        margin-top: 23vh;
     }
 }
 
@@ -179,29 +185,29 @@
     }
 
     .header .headerContent form {
-        margin-top: 25vh;
+        margin-top: 32vh;
     }
 }
 
 @media screen and (max-width: 1366px) {
     .header .headerContent .titles h1 {
         width: 55%;
-        margin-top: 30vh;
-    }
-
-    .header .headerContent form {
         margin-top: 28vh;
     }
 
+    .header .headerContent form {
+        margin-top: 19vh;
+    }
+
     .homeContent h2 {
-        margin-top: 13vh;
+        margin-top: 6vh;
     }
 }
 
 @media screen and (max-width: 1280px) {
     .header .headerContent .titles h1 {
         width: 60%;
-        margin-top: 20vh;
+        margin-top: 25vh;
     }
 
     .header .headerContent .titles h2 {
@@ -219,11 +225,29 @@
 
 @media screen and (max-width: 1024px) {
     .header .headerContent .titles h1 {
-        width: 75%;
+        width: 70%;
+        font-size: 3rem;
+    }
+
+    .header .headerContent .titles h2 {
+        width: 55%;
+        font-size: 20px;
+    }
+
+    .homeContent h2 {
+        font-size: 25px;
     }
 }
 
 @media screen and (max-width: 768px) {
+    .header {
+        height: 90vh;
+        width: 100vw;
+        background: url(../../assets/mobile-hero-bg.jpg);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+
     .header .headerContent .titles h1 {
         font-size: 40px;
         width: 75%;
@@ -239,8 +263,66 @@
         margin-top: 21vh;
     }
 
-    .homeContent h2 {
-        margin-top: 5vh;
-        font-size: 25px;
+    .homeContent h2,
+    .homeContent .content {
+        display: none;
+    }
+
+    .homeContent .contentResponsive {
+        width: 100%;
+        display: block;
+    }
+
+    .homeContent .contentResponsive .imagesResults {
+        padding: 30px 0 70px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .homeContent .contentResponsive .imagesResults ul {
+        width: 100%;
+        text-align: center;
+    }
+
+    .homeContent .contentResponsive .imagesResults ul li {
+        display: inline-table;
+    }
+
+    .homeContent .contentResponsive .tweetsResults {
+        padding: 30px 0 70px;
+    }
+
+    .mobileTabs .changingResults {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mobileTabs .changingResults span {
+        padding: 10px 0 7px;
+        width: 40%;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .mobileTabs .tabs {
+        margin-top: 5px;
+        width: 80%;
+        height: 2px;
+        background-color: #41558E;
+        display: flex;
+        align-items: center;
+    }
+
+    .mobileTabs .tabs div {
+        width: 50%;
+        height: 4px;
+        background-color: #72EFDB;
+        border-radius: 100px;
+        transition: all 0.5s;
     }
 }

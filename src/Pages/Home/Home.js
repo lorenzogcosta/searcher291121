@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import NavBar from './sub-components/NavBar'
 import ImagesResults from './sub-components/ImagesResults'
@@ -11,6 +11,10 @@ import iconSearch from '../../assets/svg/icon-search.svg'
 
 
 const Home = () => {
+
+    const [tabActive, setTabActive] = useState('images'); // To switch between tabs with last images and tweets on responsive version
+    const [imagesResults, setImagesResults] = useState([]); // Set results of the last images from the currently searched hashtag
+    const [tweetsResults, setTweetsResults] = useState([]); // Set results of the last tweets from the currently searched hashtag
 
     return (
         <>
@@ -37,12 +41,30 @@ const Home = () => {
             </div>
             <div className={styles.mobileTabs}>
                 <div className={styles.changingResults}>
-                    <span>Tweets</span>
-                    <span>Imagens</span>
-
+                    <span
+                    onClick={() => setTabActive('tweets')}
+                        style={{
+                            color: `${tabActive === 'tweets' ? '#72EFDB' : 'white'}`,
+                        }}
+                    >
+                    Tweets
+                    </span>
+                    <span
+                        onClick={() => setTabActive('images')}
+                            style={{
+                                color: `${tabActive === 'images' ? '#72EFDB' : 'white'}`,
+                            }}
+                    >
+                    Imagens
+                    </span>
                 </div>
                 <div className={styles.tabs}>
-                    <div></div>
+                    <div
+                        style={{
+                            transform: `${tabActive === 'images' ? 'translateX(100%)' : 'translateX(0%)'}`
+                        }}
+                    >
+                    </div>
                 </div>
             </div>
             <div className={styles.homeContent}>
@@ -61,17 +83,19 @@ const Home = () => {
 
                 </div>
                 <div className={styles.contentResponsive}>
+                    {tabActive === 'images' ? (
                     <div className={styles.imagesResults}>
                         <ul>
                             <li><ImagesResults/></li>
                         </ul>
                     </div>
+                    ) : (
                     <div className={styles.tweetsResults}>
                         <ul>
                             <li><TweetsResults/></li>
                         </ul>
                     </div>
-
+                    )}                    
                 </div>
             </div>
             <Footer />

@@ -1,13 +1,22 @@
 .tweetsResults {
     margin: 15px;
-    padding: 20px 0;
     min-height: 200px;
-    background-color: #1E3E7B17;
-    border: 1px solid #FFFFFF24;
-    border-radius: 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.tweetsResults ul {
+    width: 100%;
+}
+
+.tweetsResults ul li {
+    background-color: #1E3E7B17;
+    display: inline-table;
+    border: 1px solid #FFFFFF24;
+    border-radius: 15px;
+    padding: 20px 0;
+    margin-bottom: 6.4vh;
 }
 
 .tweetsResults .tweetsResultsContent {
@@ -75,6 +84,42 @@
 .tweetsResults .linkContainer a:hover {
     text-decoration: underline;
 }
+
+/*---------------Media Queries---------------*/
+
+@media screen and (max-width: 2560px) {
+    .tweetsResults .tweetsResultsContent {
+        margin-top: 3vh;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .tweetsResults .tweetsResultsContent {
+        margin-top: 3vh;
+        width: 40vw;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .tweetsResults {
+        margin-left: -4vw;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .tweetsResults {
+        margin-left: 4vw;
+    }
+
+    .tweetsResults .tweetsResultsContent .tweetsContainer h1 {
+        font-size: 1.3rem;
+    }
+
+    .tweetsResults .tweetsResultsContent .tweetsContainer p {
+        font-size: 15px;
+    }
+}
+
 
 
 
