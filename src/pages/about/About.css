@@ -1,5 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 
-
+body {
+    background-size: 100vw 42vmax, auto 100vmax;
+    background-position: 0% 58.5vmax, 0% 0%;
+}
 .about {
-background-color: blue;
+     background-color: #0A1744;
+     margin: 0 auto;
+}
+ 
+.about-project {   
+
+    padding: 140px 140px 196px 140px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main{
+    max-width: 55%;
+}
+
+.about-team {
+    padding: 0px 140px 196px 140px;
+ }
+ 
+ .about-tittle{
+    color: #FCFCFC;
+    font-size: 82px;
+    margin-bottom: 40px;
+}
+
+.about-text{
+    color:#FCFCFC;
+    font-size: 21px;
+    width: 39.2vw;
+    line-height: 1.9vw;
+    
+}
+
+.about-team__members {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.about-members {
+    /* cor e fonte */
+    background-color: #0B1A49;
+	box-shadow:0px 5px 10px #5538EE14; 
+	border-radius:10px; 
+	text-align:center;
+    border: 1px solid #FFFFFF24;
+    /* tamanho */
+    height: 461px;
+    width: 400px;
+    max-width: 100%;
+    margin: 0 2% 46px;
+}
+
+.about-member__imagem {
+    
+        width: 178px;
+        height: 178px;
+        border-radius: 50%;
+}
+
+.about-image{
+    width: 637px;
+    height: 537px;
+    margin-top: 100px;
+}
+
+.about-team__title {
+    color: #FFFFFF;
+    font-size: 54px;
+}
+
+.about-member__name {
+        color:#72EFDB;
+        font-size:28px;
+}
+
+.about-member__text {
+    color: #D9D9D9;
+    font-size: 18px;
+}
+
+.about-member__link {
+    padding:28px;
+    color: #72EFDB;
 }

@@ -2,9 +2,8 @@ import React from 'react';
 
 //Imagens
 import gitIcon from '../../../assets/svg/icon-github.svg';
-// import emailIcon from '../../svg/icon-envelope.svg';
-// import linkedinIcon from '../../svg/icon-awesome-linkedin.svg';
-
+import emailIcon from '../../../assets/svg/icon-envelope.svg';
+import linkedinIcon from '../../../assets/svg/icon-awesome-linkedin.svg';
 
     const AboutMembers = (props) => {
         return (
@@ -30,14 +29,14 @@ import gitIcon from '../../../assets/svg/icon-github.svg';
                     <a href={"mailto:" + props.email}>
                         <img
                             className="about-member__link"
-                            // src={emailIcon}
+                            src={emailIcon}
                             alt="Email"
                         />
                     </a>
                     <a href={"https://www.linkedin.com/in/" + props.linkedin} target="_blank" rel="noopener noreferrer">
                         <img
                             className="about-member__link"
-                            // src={linkedinIcon}
+                            src={linkedinIcon}
                             alt="LinkedIn"
                         />
                     </a>
