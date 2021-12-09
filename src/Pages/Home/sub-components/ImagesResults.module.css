@@ -41,7 +41,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    background-image: linear-gradient(to bottom, transparent, #000000ee);
     margin-top: -15vh;
     margin-left: 0vw;
 }
@@ -86,11 +85,11 @@
 @media screen and (max-width: 1366px) {
     .imagesResults {
         width: 38vw;
-        margin-left: -23vw;
+        margin-left: -16vw;
     }
 
     .imagesResults .dataPost {
-        margin-top: -9vh;
+        margin-top: -14vh;
     }
 }
 
@@ -104,7 +103,7 @@
 @media screen and (max-width: 1024px) {
     .imagesResults {
         width: 49vw;
-        margin-left: -25vw;
+        margin-left: -30vw;
     }
 
     .imagesResults ul li {
@@ -112,5 +111,106 @@
         min-height: 50px;
         width: 20%;
         height: 20%;
+    }
+}
+
+@media screen and (max-width: 812px) { 
+    .imagesResults {
+        width: 57vw;
+        margin-left: -25vw;
+        margin-top: 20vh;
+    }
+
+    .imagesResults ul li img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .imagesResults .dataPost {
+        margin-top: -13vh;
+        margin-left: 2vw;
+    }
+
+    .imagesResults .dataPost span:first-child {
+        font-size: 13px;
+    }
+
+    .imagesResults .dataPost span:last-child {
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 768px) { 
+    .imagesResults {
+        width: 70vw;
+        margin-left: -2vw;
+        margin-top: 2vh;
+    }
+
+    .imagesResults ul li img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .imagesResults .dataPost {
+        margin-top: -10vh;
+        margin-left: 2vw;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .imagesResults .dataPost {
+        margin-top: -17vh;
+        margin-left: 2vw;
+    }
+}
+
+@media screen and (max-width: 653px) { 
+    .imagesResults {
+        width: 82vw;
+        margin-top: 2vh;
+        margin-left: 1vw;
+    }
+
+    .imagesResults .dataPost {
+        margin-top: -35vh;
+        margin-left: 2vw;
+    }
+
+    .imagesResults ul li {
+        border-radius: 40px;
+    }
+}
+
+@media screen and (max-width: 540px) { 
+    .imagesResults {
+        width: 90vw;
+        margin-left: -2vw;
+    }
+
+    .imagesResults ul li { 
+        width: 200px;
+        height: 200px;
+        margin-left: 3vw;
+    }
+
+    .imagesResults .dataPost {
+        margin-top: -15vh;
+        margin-left: 2vw;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .imagesResults .dataPost {
+        margin-top: -13vh;
+        margin-left: 2vw;
+    }
+
+    .imagesResults .dataPost span:first-child {
+        font-size: 15px;
+    }
+
+    .imagesResults .dataPost span:last-child {
+        font-size: 13px;
     }
 }

@@ -218,6 +218,14 @@
         margin-top: 21vh;
     }
 
+    .homeContent .content .imagesResults {
+        margin-left: 7vw;
+    }
+
+    .homeContent .content .tweetsResults {
+        margin-left: 10vw;
+    }
+
     .homeContent h2 {
         margin-top: 5vh;
     }
@@ -239,28 +247,27 @@
     }
 }
 
-@media screen and (max-width: 768px) {
-    .header {
-        height: 90vh;
-        width: 100vw;
-        background: url(../../assets/mobile-hero-bg.jpg);
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
+@media screen and (max-width: 812px) {
+    .homeContent h2 {
+        display: none;
     }
+}
 
+@media screen and (max-width: 768px) {
     .header .headerContent .titles h1 {
         font-size: 40px;
         width: 75%;
-        margin-top: 20vh;
+        margin-top: 17vh;
     }
 
     .header .headerContent .titles h2 {
         width: 60%;
         font-size: 17px;
+        margin-bottom: 2vh;
     }
 
     .header .headerContent form {
-        margin-top: 21vh;
+        margin-top: 32vh;
     }
 
     .homeContent h2,
@@ -324,5 +331,184 @@
         background-color: #72EFDB;
         border-radius: 100px;
         transition: all 0.5s;
+    }
+
+    .mobileTabs .changingResults span {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .header {
+        height: 120vh;
+        width: 100vw;
+    }
+
+    .header .headerContent form {
+        margin-top: 19vh;
+        margin-left: -5vw;
+    }
+
+    .mobileTabs {
+        margin-top: -26vh;
+    }
+
+    .mobileTabs .changingResults span {
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 653px) {
+    .header {
+        height: 300vh;
+        width: 100vw;
+    }
+
+    .header .headerContent .titles h1 {
+        font-size: 40px;
+        width: 90%;
+    }
+
+    .header .headerContent .titles h2 {
+        width: 70%;
+    }
+    
+    .mobileTabs {
+        margin-top: -60vh;
+    }
+
+    .header .headerContent form {
+        max-width: 380px;
+        min-width: 80px;
+        width: 100%;
+        height: 80px;
+        margin-top: 15vh;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .header {
+        height: 150vh;
+        width: 100vw;
+        background: url(../../assets/mobile-hero-bg.jpg);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .mobileTabs {
+        margin-top: -20vh;
+    }
+}
+
+
+@media screen and (max-width: 425px) {
+    .header .headerContent {
+        width: 100vw;
+    }
+
+    .header .headerContent form {
+        max-width: 560px;
+        min-width: 520px;
+    }
+
+    .header .headerContent form button {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .header .headerContent form button img {
+        padding: 25px;
+    }
+
+    .header .headerContent form .inputSearch {
+        height: 100%;
+        width: calc(100% - 30px);
+        font-size: 2rem;
+        color: white;
+        border: none;
+        background-color: transparent;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .header {
+        height: 150vh;
+        width: 100vw;
+    }
+
+    .header .headerContent .titles h1 {
+        font-size: 30px;
+        margin-top: 6vh;
+        width: 90%;
+        margin-left: 4vw;
+    }
+
+    .header .headerContent .titles h2 {
+        font-size: 22px;
+        width: 80%;
+        margin-left: 4vw;
+    }
+    
+    .header .headerContent form {
+        max-width: 350px;
+        min-width: 80px;
+        width: 100%;
+        height: 60px;
+        margin-left: 3vw;
+    }
+
+    .header .headerContent form button img {
+        padding: 15px;
+    }
+
+    .header .headerContent form .inputSearch::placeholder {
+        font-size: 1.7rem;
+    }
+
+    .mobileTabs .changingResults span {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .header {
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .header .headerContent {
+        width: 90%;
+        justify-content: flex-start;
+    }
+
+    .header .headerContent .titles h1 {
+        font-size: 20px;
+        margin-top: 6vh;
+        width: 90%;
+    }
+
+    .header .headerContent .titles h2 {
+        font-size: 16px;
+        width: 90%;
+    }
+
+    .header .headerContent form {
+        max-width: 260px;
+        min-width: 80px;
+        width: 100%;
+        height: 60px;
+    }
+
+    .header .headerContent form button img {
+        padding: 15px;
+    }
+
+    .header .headerContent form .inputSearch::placeholder {
+        font-size: 1.7rem;
+    }
+
+    .mobileTabs .changingResults span {
+        font-size: 20px;
     }
 }
