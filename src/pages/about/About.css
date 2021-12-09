@@ -14,16 +14,28 @@ body {
 }
 
 .about-project {
+    padding: 45px 26px 48px 26px;
     display: flex;
     flex-direction: column;
     align-items: center;
     /* justify-content: space-between; */
 }
+.about-tittle {
+    font-size:33px;
+    line-height: 90px;
+    margin-bottom: 32px;
+  
+}
+
+.about-text {
+    font-size: 15px;
+    line-height: 26px;
+}
 
 .about-image{
     width: 348px;
     height: 294px;    
-    /* margin-top: 100px; */
+    margin-top: 57px;
 }
 
 .about-team__title {
@@ -89,6 +101,7 @@ body {
 
 @media (min-width: 1360px) {
     .about-project {
+
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -97,6 +110,11 @@ body {
 
     main {
         max-width: 55%;
+    }
+
+    .about-tittle {
+        font-size: 56px;
+        margin-bottom: 40px;
     }
 
     .about-image {
@@ -157,19 +175,20 @@ body {
 }
 
 /* Telas 1920 */
-/* @media (min-width: 1920px) {
+@media (min-width: 1920px) {
+   
     .about-tittle {
         font-size: 82px;
         margin-bottom: 40px;
     }
 
-    .about-team {
+     .about-team {
         padding: 0px 140px 196px 140px;
     }
-
+    /*
     .about-team__members {
         display: flex;
         align-items: center;
         justify-content: space-between;
-    }
-} */
+    } */
+}
