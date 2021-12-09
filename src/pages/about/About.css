@@ -1,106 +1,175 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: #0A1744;
+    background-color: #0a1744;
+    color: #fcfcfc;
     /* background: linear-gradient(180deg, #0A174400 0%, #0A1744 100%) no-repeat,#0A1744;
     background-size:  100vw 42vmax, auto 100vmax;
     background-position:  0% 58.5vmax, 0% 0%; */
     height: 100vh;
 }
- 
-.about-project {   
 
-    padding: 140px 140px 196px 140px;
+.about-project {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-}
-
-main{
-    max-width: 55%;
-}
-
-.about-team {
-    padding: 0px 140px 196px 140px;
- }
- 
- .about-tittle{
-    color: #FCFCFC;
-    font-size: 82px;
-    margin-bottom: 40px;
-}
-
-.about-text{
-    color:#FCFCFC;
-    font-size: 21px;
-    width: 39.2vw;
-    line-height: 1.9vw;
-    
-}
-
-.about-team__members {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.about-members {
-    /* cor e fonte */
-    background-color: #0B1A49;
-	box-shadow:0px 5px 10px #5538EE14; 
-	border-radius:10px; 
-	text-align:center;
-    border: 1px solid #FFFFFF24;
-    /* tamanho */
-    height: 461px;
-    width: 400px;
-    max-width: 100%;
-    padding: 36px;
-}
-
-.about-member__imagem {
-    
-        width: 178px;
-        height: 178px;
-        border-radius: 50%;
-        margin-bottom: 22px;
+    /* justify-content: space-between; */
 }
 
 .about-image{
-    width: 637px;
-    height: 537px;
-    margin-top: 100px;
+    width: 348px;
+    height: 294px;    
+    /* margin-top: 100px; */
 }
 
 .about-team__title {
-    color: #FFFFFF;
+    color: #ffffff;
     font-size: 54px;
     margin-bottom: 108px;
     margin-left: 20px;
 }
 
+.about-team__members {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+}
+
+.about-members {
+    /* cor e fonte */
+    background-color: #0b1a49;
+    box-shadow: 0px 5px 10px #5538ee14;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #ffffff24;
+    /* tamanho */
+    height: 461px;
+    width: 400px;
+    max-width: 100%;
+    padding: 36px;
+    min-width: 400px;
+}
+
+.about-member__imagem {
+    width: 182px;
+    height: 182px;
+    border-radius: 50%;
+    margin-bottom: 22px;
+}
+
 .about-member__name {
-        color:#72EFDB;
-        font-size:28px;
-        margin-bottom: 22px;
+    color: #72efdb;
+    font-size: 28px;
+    margin-bottom: 22px;
 }
 
 .about-member__text {
-    color: #D9D9D9;
+    color: #d9d9d9;
     font-size: 18px;
-    margin-bottom:24px;
+    margin-bottom: 24px;
     min-height: 80px;
 }
 
 .about-member__link {
-    padding:28px;
-    color: #72EFDB;
+    padding: 28px;
+    color: #72efdb;
 }
 
 .about-member-contact {
     margin-bottom: 38p;
 }
+
+/* telas 1360 */
+
+@media (min-width: 1360px) {
+    .about-project {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    main {
+        max-width: 55%;
+    }
+
+    .about-image {
+        width: 637px;
+        height: 537px;
+        margin-top: 100px;
+    }
+
+    .about-text {
+        color: #fcfcfc;
+        font-size: 21px;
+        width: 39.2vw;
+        line-height: 1.9vw;
+    }
+
+    .about-team__members {
+        flex-direction: row;
+    }
+
+    .about-team__title {
+        color: #ffffff;
+        font-size: 54px;
+        margin-bottom: 108px;
+        margin-left: 20px;
+    }
+
+    .about-members {
+        /* cor e fonte */
+        padding: 36px;
+    }
+
+    .about-member__imagem {
+        width: 178px;
+        height: 178px;
+    }
+
+    .about-member__name {
+        color: #72efdb;
+        font-size: 28px;
+        margin-bottom: 22px;
+    }
+
+    .about-member__text {
+        color: #d9d9d9;
+        font-size: 18px;
+        margin-bottom: 24px;
+        min-height: 80px;
+    }
+
+    .about-member__link {
+        padding: 28px;
+        color: #72efdb;
+    }
+
+    .about-member-contact {
+        margin-bottom: 38p;
+    }
+}
+
+/* Telas 1920 */
+/* @media (min-width: 1920px) {
+    .about-tittle {
+        font-size: 82px;
+        margin-bottom: 40px;
+    }
+
+    .about-team {
+        padding: 0px 140px 196px 140px;
+    }
+
+    .about-team__members {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+} */

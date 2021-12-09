@@ -19,21 +19,21 @@ import linkedinIcon from '../../../assets/svg/icon-awesome-linkedin.svg';
                     {props.texto}
                 </p>
                 <div className="about-member__contact">
-                    <a href={"http://github.com/" + props.git} target="_blank" rel="noopener noreferrer">
+                    <a href={props.git} target="_blank" rel="noopener noreferrer">
                         <img
                             className="about-member__link"
                             src={gitIcon}
                             alt="Github"
                         />
                     </a>
-                    <a href={"mailto:" + props.email}>
+                    <a href={props.email}>
                         <img
                             className="about-member__link"
                             src={emailIcon}
                             alt="Email"
                         />
                     </a>
-                    <a href={"https://www.linkedin.com/in/" + props.linkedin} target="_blank" rel="noopener noreferrer">
+                    <a href={props.linkedin} target="_blank" rel="noopener noreferrer">
                         <img
                             className="about-member__link"
                             src={linkedinIcon}

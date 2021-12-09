@@ -30,7 +30,7 @@ const AboutTeam = () => {
                 texto="Fui responsável pela criação e estilização da sessão Sobre, em HTML, CSS, JS e React"
                 git="https://github.com/joanealves"
                 email="joanealves2011@gmail.com"
-                linkedin="https://www.linkedin.com/in/joane-alves-ribeiro//"
+                linkedin="https://www.linkedin.com/in/joane-alves-ribeiro/"
             />
 
             <AboutMembers
@@ -39,7 +39,7 @@ const AboutTeam = () => {
                 texto="Contribui com o desenvolvimento do HTML, CSS e Java Script da página Login e página de buscas."
                 git="https://github.com/lorenzogcosta"
                 email="lorenzocostasan94@gmail.com"
-                linkedin="https://www.linkedin.com/in/lorenzogcosta/-mour%C3%A3o-ba0756a3/"
+                linkedin="https://www.linkedin.com/in/lorenzogcosta/"
             />
           </div>
     </section>
