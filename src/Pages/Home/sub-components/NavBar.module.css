@@ -148,9 +148,48 @@ span {
     }
 }
 
+@media screen and (max-width: 667px) {
+    .navbar .container {
+        width: 667px;
+    }
+ 
+}
+
 @media screen and (max-width: 653px) {
     nav {
         width: 350px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .navbar .container {
+        width: 640px;
+    }
+}
+
+@media screen and (max-width: 568px) {
+    .navbar .container {
+        width: 568px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .aboutIcon {
+        margin-left: 7vw;
+    }
+    
+    .loginIcon {
+        margin-left: 7vw;
+    }
+    
+    .homeIcon {
+        margin-left: 7vw;
+    }
+    
+    .logoutIcon {
+        margin-left: 7vw;
     }
 }
 
@@ -200,7 +239,17 @@ span {
     }
 }
 
+@media screen and (max-width: 425px) {
+    .navbar .container {
+        width: 425px;
+    }
+}
+
 @media screen and (max-width: 414px) {
+    .navbar .container {
+        width: 414px;
+    }
+
     .logo {
         font-size: 30px;
     }
@@ -251,6 +300,12 @@ span {
     .logoutIcon {
         margin-left: 4vw;
         padding-top: 12px;
+    }
+}
+
+@media screen and (max-width: 411px) {
+    .navbar .container {
+        width: 411px;
     }
 }
 
@@ -314,6 +369,24 @@ span {
         margin-left: 6vw;
         padding-top: 12px;
     }
+}
+
+@media screen and (max-width: 360px) {
+    .navbar .container {
+        width: 360px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .navbar .container {
+        width: 320px;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        margin-left: -1vh;
+    } 
 }
 
 @media screen and (max-width: 280px) {
