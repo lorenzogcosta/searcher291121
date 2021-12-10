@@ -201,6 +201,34 @@
     }
 }
 
+@media screen and (max-width: 414px) {
+    .tweetsResults {
+        margin-left: 4vw;
+    }
+
+    .tweetsResults ul li {
+        width: 90vw;
+    }
+
+    .tweetsResults .tweetsResultsContent .tweetsContainer h1 {
+        font-size: 16px;
+    }
+
+    .tweetsResults .tweetsResultsContent .tweetsContainer h1 span {
+        font-size: 14px;
+    }
+
+
+    .tweetsResults .tweetsResultsContent .tweetsContainer p {
+        font-size: 17px;
+    }
+
+    .tweetsResults .linkContainer a {
+        font-size: 17px;
+        margin-left: 9vw
+    }
+}
+
 @media screen and (max-width: 375px) {
     .tweetsResults .tweetsResultsContent .tweetsContainer h1 {
         font-size: 13px;

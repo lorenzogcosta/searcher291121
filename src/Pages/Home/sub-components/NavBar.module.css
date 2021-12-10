@@ -200,6 +200,60 @@ span {
     }
 }
 
+@media screen and (max-width: 414px) {
+    .logo {
+        font-size: 30px;
+    }
+
+    nav {
+        width: 90px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        margin-right: 10px;
+        margin-left: -8vh;
+        margin-top: -4vh;
+    } 
+
+    .itemOne, .itemOneHome {
+        margin-bottom: 2vh;
+    }
+
+    .itemOne, .itemTwo, .itemOneHome, .itemTwoLogOut {
+        width: 100px;
+        height: 35px;
+        font-size: 12px;
+    }
+
+    .itemTwo, .itemTwoLogOut {
+        margin-left: 4vw;
+    }
+
+    .aboutIcon {
+        margin-left: 4vw;
+        padding-top: 12px;
+    }
+
+    .loginIcon {
+        margin-left: 4vw;
+        padding-top: 12px;
+    }
+    
+    .homeIcon {
+        margin-left: 4vw;
+        padding-top: 12px;
+    }
+    
+    .logoutIcon {
+        margin-left: 4vw;
+        padding-top: 12px;
+    }
+}
+
 @media screen and (max-width: 375px) {
     
     .navbar {

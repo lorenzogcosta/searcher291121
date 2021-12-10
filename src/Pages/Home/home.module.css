@@ -1,6 +1,7 @@
 /*---------------Header---------------*/
 
 .header {
+    max-width: 100%;
     height: 90vh;
     width: 100vw;
     background: url(../../assets/hero-bg.jpg);
@@ -191,7 +192,7 @@
 
 @media screen and (max-width: 1366px) {
     .header .headerContent .titles h1 {
-        width: 55%;
+        width: 60%;
         margin-top: 28vh;
     }
 
@@ -338,6 +339,26 @@
     }
 }
 
+@media screen and (max-width: 736px) {
+    .header {
+        height: 260vh;
+        width: 100vw;
+    }
+
+    .header .headerContent form {
+        margin-top: 16vh;
+        margin-left: -4vw;
+    }
+
+    .mobileTabs {
+        margin-top: -45vh;
+    }
+
+    .mobileTabs .changingResults span {
+        font-size: 25px;
+    }
+}
+
 @media screen and (max-width: 720px) {
     .header {
         height: 120vh;
@@ -355,6 +376,30 @@
 
     .mobileTabs .changingResults span {
         font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 667px) {
+    .header {
+        height: 280vh;
+        width: 100vw;
+    }
+
+    .header .headerContent .titles h1 {
+        font-size: 40px;
+        width: 93%;
+    }
+
+    .header .headerContent .titles h2 {
+        width: 70%;
+    }
+
+    .header .headerContent form {
+        margin-left: -9vw;
+    }
+
+    .mobileTabs {
+        margin-top: -37vh;
     }
 }
 
@@ -400,40 +445,47 @@
     }
 }
 
-
-@media screen and (max-width: 425px) {
-    .header .headerContent {
+@media screen and (max-width: 414px) {
+    .header {
+        height: 100vh;
         width: 100vw;
     }
 
-    .header .headerContent form {
-        max-width: 560px;
-        min-width: 520px;
+    .header .headerContent .titles h1 {
+        font-size: 30px;
+        margin-top: 10vh;
+        width: 110%;
+        margin-left: -3vw;
     }
 
-    .header .headerContent form button {
-        background: transparent;
-        border: none;
-        cursor: pointer;
+    .header .headerContent .titles h2 {
+        font-size: 18px;
+        width: 110%;
+        margin-left: -3vw;
+    }
+
+    .header .headerContent form {
+        height: 51px;
+        width: 450px;
+        margin-left: -8vw;
+    }
+
+    .header .headerContent form .inputSearch::placeholder {
+        font-size: 1.4rem;
     }
 
     .header .headerContent form button img {
-        padding: 25px;
+        padding: 10px;
     }
 
-    .header .headerContent form .inputSearch {
-        height: 100%;
-        width: calc(100% - 30px);
-        font-size: 2rem;
-        color: white;
-        border: none;
-        background-color: transparent;
+    .mobileTabs .changingResults span {
+        font-size: 15px;
     }
 }
 
 @media screen and (max-width: 375px) {
     .header {
-        height: 150vh;
+        height: 130vh;
         width: 100vw;
     }
 
@@ -464,6 +516,10 @@
 
     .header .headerContent form .inputSearch::placeholder {
         font-size: 1.7rem;
+    }
+
+    .mobileTabs {
+        margin-top: -25vh;
     }
 
     .mobileTabs .changingResults span {
