@@ -1,0 +1,27 @@
+.footer {
+    width: 100vw;
+    height: 202px;
+    background-color: #1E3E7B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    bottom: 0;
+}
+
+.footer span {
+    font-family: 'Rubik', sans-serif;
+    padding: 0 15px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 620px) {
+    .footer {
+        height: 120px;
+    }
+
+    .footer span {
+        font-family: 'Rubik', sans-serif;
+        font-size: 0.9rem;
+    }
+}
