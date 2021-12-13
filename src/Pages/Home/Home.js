@@ -9,7 +9,6 @@ import styles from './Home.module.css'
 
 import iconSearch from '../../assets/svg/icon-search.svg'
 
-
 const Home = () => {
 
     const [tabActive, setTabActive] = useState('images'); // To switch between tabs with last images and tweets on responsive version
