@@ -3,10 +3,10 @@ import { NavLink } from 'react-router-dom'
 
 import styles from './NavBar.module.css'
 
-import aboutIcon from '../../../assets/svg/icon-info-circle.svg'
-import loginIcon from '../../../assets/svg/icon-user-alt.svg'
-import homeIcon from '../../../assets/svg/icon-home.svg'
-import logoutIcon from '../../../assets/svg/icon-power-off.svg'
+import aboutIcon from '../../assets/svg/icon-info-circle.svg'
+import loginIcon from '../../assets/svg/icon-user-alt.svg'
+import homeIcon from '../../assets/svg/icon-home.svg'
+import logoutIcon from '../../assets/svg/icon-power-off.svg'
 
 
 export default function NavBar ({ fixed, layout }) {

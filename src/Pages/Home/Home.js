@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 
-import NavBar from './sub-components/NavBar'
+import NavBar from '../../components-utils/header/NavBar'
 import ImagesResults from './sub-components/ImagesResults'
 import TweetsResults from './sub-components/TweetsResults'
-import Footer from './sub-components/Footer'
+import Footer from '../../components-utils/footer/Footer'
 
 import styles from './Home.module.css'
 
