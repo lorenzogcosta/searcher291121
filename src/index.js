@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Home from './pages/Home/Home'
+import Home from './pages/home/Home'
 import About from './pages/about/About'
 import Login from './pages/login/Login'
-// import SearchList from './pages/searchlist/SearchList'
+
 import './styles/index.css'
 
 
@@ -18,8 +18,7 @@ ReactDOM.render(
       <Route path="/" exact={true} element={<Home />} />
       <Route path="/sobre" element={<About />} />
       <Route path="/login" element={<Login />} />
-      {/* <Route path="/lista-de-busca" exact element={<SearchList />} /> */}
-    </Routes>
+      </Routes>
   </ BrowserRouter>
   ,
   document.getElementById('root')

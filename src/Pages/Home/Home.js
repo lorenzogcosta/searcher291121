@@ -6,7 +6,7 @@ import TweetsResults from './sub-components/TweetsResults'
 import Footer from '../../components-utils/footer/Footer'
 import iconSearch from '../../assets/svg/icon-search.svg'
 
-import styles from '../../pages/Home/Home.module.css'
+import styles from './Home.module.css'
 
 
 const Home = () => {
