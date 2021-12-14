@@ -4,10 +4,10 @@ import NavBar from '../../components-utils/header/NavBar'
 import ImagesResults from './sub-components/ImagesResults'
 import TweetsResults from './sub-components/TweetsResults'
 import Footer from '../../components-utils/footer/Footer'
+import iconSearch from '../../assets/svg/icon-search.svg'
 
 import styles from '../../pages/Home/Home.module.css'
 
-import iconSearch from '../../assets/svg/icon-search.svg'
 
 const Home = () => {
 
