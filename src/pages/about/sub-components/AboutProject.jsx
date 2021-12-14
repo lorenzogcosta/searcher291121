@@ -29,6 +29,7 @@ const AboutProject = () => {
       <img className='about-image'
       src={ilustração} alt="Ilustração"></img>
     </div>
+    
   );
 };
 
