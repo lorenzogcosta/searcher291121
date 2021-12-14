@@ -3,8 +3,6 @@ import React, { Component } from "react";
 import './Login.css';
 import axios from 'axios';
 
-
-
 // ---------------LOGIN-AREA RENDERIZATION--------------------
 
 export default class loginArea extends Component {
@@ -16,7 +14,6 @@ export default class loginArea extends Component {
             data: []
         }
     }
-
 
     loginCheck(e) {
         e.preventDefault();
