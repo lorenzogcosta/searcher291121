@@ -1,7 +1,7 @@
 import React from 'react'
 
 //componentes
-import AboutMembers from '../sub-components/AboutMembers';
+import AboutMembers from './AboutMembers';
 
 //Imagens
 import Joane from '../../../assets/profile/joane.jpg';

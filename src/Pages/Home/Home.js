@@ -5,7 +5,7 @@ import ImagesResults from './sub-components/ImagesResults'
 import TweetsResults from './sub-components/TweetsResults'
 import Footer from '../../components-utils/footer/Footer'
 
-import styles from './Home.module.css'
+import styles from '../../pages/Home/Home.module.css'
 
 import iconSearch from '../../assets/svg/icon-search.svg'
 
