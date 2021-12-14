@@ -17,7 +17,7 @@ const AboutTeam = () => {
 
             <AboutMembers
                 foto={Esther}
-                nome="Esther Valentin Bacelar"
+                nome="Esther Valentim Bacelar"
                 texto="Trabalhei no desenvolvimento da Home, em HTML, CSS, JS e React"
                 git="https://github.com/esthervbac"
                 email="esther.v.bacelar@gmail.com"

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Home from './pages/home/Home'
+import Home from './pages/Home/Home'
 import About from './pages/about/About'
 import Login from './pages/login/Login'
 // import SearchList from './pages/searchlist/SearchList'
