@@ -64,9 +64,6 @@ export default class loginArea extends Component {
         this.setState({ data: body })
     }
 
-
-
-
     render() {
         return (
             <div className="loginArea">
