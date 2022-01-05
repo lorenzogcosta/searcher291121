@@ -1,6 +1,6 @@
 {
   "name": "searcher291121",
-  "homepage": "https://lorenzogcosta.github.io/searcher291121/",
+  "homepage": "https://lorenzogcosta.github.io/searcher291121",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,11 +8,14 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.24.0",
+    "formik": "^2.2.9",
+    "history": "^5.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-router-dom": "^6.0.2",
+    "react-router-dom": "^6.2.1",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -38,9 +38,13 @@ body {
     backdrop-filter: blur(10px);
 }
 
+form div{
+    width: -webkit-fill-available;
+}
+
 
 /* -----------INPUTS USER AND PASSWORD STYLE----------------- */
-.loginArea input {
+.field{
     border-top-style: hidden;
     border-right-style: hidden;
     border-left-style: hidden;
@@ -49,13 +53,13 @@ body {
     background-color: rgba(255, 255, 255, 0);
     color: white;
     width: inherit;
-    margin-top: 50px;
+    margin-top: 30px;
     border-color: rgba(255,255,255, 0.4);
     height: 25px;
 
 }
 
-.loginArea ::placeholder{
+.field ::placeholder{
     color: white;
     align-self: center;
 }
@@ -71,17 +75,17 @@ body {
     font-weight: bold;
 }
 
-
 .loginH2 {
     margin: 0;
     color: aqua;
 }
 
-.emailEmpty , .passwordEmpty{
+.errormessage {
     color: red;
     border-radius: 5px;
     margin-top: 4px;
     padding: 2px;
+    width: auto;
 }
 
 /*---------------- TABLET AND NAVIGATOR RESPONSIVE ------------*/
@@ -89,7 +93,7 @@ body {
 @media screen and (min-width: 768px) {
 
 
-    .emailEmpty , .passwordEmpty{
+    .errormessage{
 
         margin-top: 0px;
         
@@ -130,7 +134,7 @@ body {
         font-weight: bold;
     }
     
-    .loginArea input {
+    .field {
         border-top-style: hidden;
         border-right-style: hidden;
         border-left-style: hidden;

@@ -1,6 +1,5 @@
 import React from "react";
-import './list-results.css';
-
+import '../../login/sub-components/List-results.css'
 export default function results() {
     return (
         <div className="resultsHero">
