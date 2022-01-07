@@ -1,24 +1,10 @@
-import React, { useContext } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
-import Context from '../Context';
+import { Outlet , Navigate } from "react-router-dom";
+import { isLogin } from '../utils/Logged' 
 
-const RoutePrivate = ({ component: Component, ...rest }) => {
+function PrivateRoute() {
 
-    const { logged } = useContext(Context)
-
-    const navigate = useNavigate();
-
-    return (
-        <Routes>
-            <Route
-                {...rest}
-                render={() => logged
-                    ? <Component {...rest} />
-                    : navigate('/login')
-                }
-            />
-        </Routes>
-    )
+  return isLogin() ? <Outlet/> : <Navigate to="/login" />;
 }
 
-export default RoutePrivate;
+export default PrivateRoute
+

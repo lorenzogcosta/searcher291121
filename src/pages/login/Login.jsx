@@ -3,6 +3,7 @@ import axios from 'axios';
 import { ErrorMessage, Formik, Form, Field } from "formik";
 import * as yup from 'yup'
 import { useNavigate } from "react-router-dom";
+import { login } from './utils/Logged'
 
 import './Login.css';
 import Navbar from '../../components-utils/header/NavBar';
@@ -12,7 +13,7 @@ import Footer from '../../components-utils/footer/Footer';
 const LoginArea = () => {
     const [errlog, setErrlog] = useState(false);
     const navigate = useNavigate();
-    
+
     const validations = yup.object().shape({
         email: yup.string().email('Digite Um Email Valido').required('Digite Seu Email'),
         password: yup.string().min(6, 'Minimo 6 Caracteres').required('Digite Sua Senha')
@@ -23,7 +24,7 @@ const LoginArea = () => {
 
         let eventError = false;
         let logged = false;
-        
+
         if (!eventError) {
 
             axios.get('https://api.airtable.com/v0/app6wQWfM6eJngkD4/Login?maxRecords=6&view=Grid%20view',
@@ -42,6 +43,7 @@ const LoginArea = () => {
                         } return false
                     })
                     if (logged) {
+                        login();
                         
                         navigate('/results')
                     } else {

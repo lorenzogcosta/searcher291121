@@ -1,8 +1,8 @@
 import React from "react";
 import './List-results.css'
 
-export default function results() {
-
+export default function Results() {
+    
     return (
 
         <div className="resultsHero">
