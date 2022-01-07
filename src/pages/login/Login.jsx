@@ -55,7 +55,6 @@ const LoginArea = () => {
         }
     }
 
-<<<<<<< HEAD
     return (
         <>
             <Navbar layout="login" />
@@ -79,24 +78,6 @@ const LoginArea = () => {
                         <button type="submit">ACESSAR</button>
                     </Form>
                 </Formik>
-=======
-    login(body) {
-
-        this.setState({ data: body })
-    }
-
-    render() {
-        return (
-            <div className="loginArea">
-                <form onSubmit={this.loginCheck} className="formLogin">
-                    <h2 className="loginH2">Login</h2>
-                    <input onKeyPress={() => document.querySelector('.emailEmpty').innerHTML = ""} type="email" placeholder="Usuário" className="inputEmail" />
-                    <label htmlFor="user" className="emailEmpty"></label>
-                    <input onKeyPress={() => document.querySelector('.passwordEmpty').innerHTML = ""} type="password" placeholder="Senha" className="inputPassword" />
-                    <label htmlFor="password" className="passwordEmpty"></label>
-                    <button type="submit">ACESSAR</button>
-                </form>
->>>>>>> 87f2e7ca477e2bdfb329e17d9e6514f7e1ce0d65
             </div>
             <Footer />
         </>
