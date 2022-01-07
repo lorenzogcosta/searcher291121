@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { NavLink } from 'react-router-dom'
+import { isLogin } from "../../pages/login/utils/Logged";
 
 import styles from './NavBar.module.css'
 
@@ -9,17 +10,10 @@ import homeIcon from '../../assets/svg/icon-home.svg'
 import logoutIcon from '../../assets/svg/icon-power-off.svg'
 
 
-export default function NavBar ({ fixed, layout }) {
-    const [logged, setLogged] = useState(false);
-
-    useEffect(() => {
-        if (sessionStorage.getItem('login') === 'true') {
-            setLogged(true);
-        }
-    }, []);
-
+export default function NavBar({ fixed, layout }) {
+    
     const setLoggedStatus = () => {
-        sessionStorage.setItem('login', 'false');
+        localStorage.removeItem('jwt');
     }
 
     return (
@@ -38,18 +32,19 @@ export default function NavBar ({ fixed, layout }) {
                     <nav>
                         <ul>
                             <NavLink to="/sobre" style={{ textDecoration: 'none' }} className={styles.itemOne}><img src={aboutIcon} alt="About Area Icon" className={styles.aboutIcon} />&nbsp;&nbsp;&nbsp;Sobre</NavLink>
-                            {logged ? (
-                                <NavLink to="/lista-de-buscas" style={{ textDecoration: 'none' }} className={styles.itemTwo}><img src={loginIcon} alt="Login Area Icon" className={styles.loginIcon} />&nbsp;&nbsp;&nbsp;Login</NavLink>
+                            {isLogin() ? (
+                                <NavLink to="/lista-de-buscas" style={{ textDecoration: 'none' }} className={styles.itemTwo}><img src={loginIcon} alt="Login Area Icon" className={styles.loginIcon} />&nbsp;&nbsp;&nbsp;Buscas</NavLink>
                             ) : (
                                 <NavLink to="/login" style={{ textDecoration: 'none' }} className={styles.itemTwo}><img src={loginIcon} alt="Login Area Icon" className={styles.loginIcon} />&nbsp;&nbsp;&nbsp;Login</NavLink>
                             )}
                         </ul>
-                    </nav> 
+                    </nav>
                 )}
                 {layout === 'login' && (
                     <nav>
                         <ul>
                             <NavLink to="/" style={{ textDecoration: 'none' }} className={styles.itemOneHome}><img src={homeIcon} alt="Home Icon" className={styles.homeIcon} />&nbsp;&nbsp;&nbsp;Home</NavLink>
+                            <NavLink to="/sobre" style={{ textDecoration: 'none' }} className={styles.itemOne}><img src={aboutIcon} alt="About Area Icon" className={styles.aboutIcon} />&nbsp;&nbsp;&nbsp;Sobre</NavLink>
                         </ul>
                     </nav>
                 )}

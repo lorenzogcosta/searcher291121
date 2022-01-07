@@ -1,10 +1,13 @@
 import React from "react";
+import Navbar from '../../../components-utils/header/NavBar'; // Header With Navigates
 
 //import Ilustração
 import ilustração from "../../../assets/svg/about-ilustration.svg";
 
 const AboutProject = () => {
   return (
+    <>
+    <Navbar layout="home" />
     <div className='about-project'>
       <main>
         <h1 className='about-tittle'>Sobre o projeto</h1>
@@ -29,6 +32,7 @@ const AboutProject = () => {
       <img className='about-image'
       src={ilustração} alt="Ilustração"></img>
     </div>
+    </>
   );
 };
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../../../src/components-utils/footer/Footer';
 
 import AboutProject from './sub-components/AboutProject';
 import AboutTeam from './sub-components/AboutTeam';
@@ -8,9 +9,8 @@ const About = () => {
         <div className='about' >
             <AboutProject/>
             <AboutTeam/>
-            
-        </div>
-       
+            <Footer />            
+        </div>       
     )
 }
 

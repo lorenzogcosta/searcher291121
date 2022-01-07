@@ -14,7 +14,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 //Import Router//
 ReactDOM.render(
-  <BrowserRouter>
+  <BrowserRouter basename = "/searcher291121">
     <Routes>
       <Route path="/" exact={true} element={<Home />} />
       <Route path="/sobre" element={<About />} />
