@@ -1,38 +1,30 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import axios from 'axios';
 import { ErrorMessage, Formik, Form, Field } from "formik";
 import * as yup from 'yup'
 import { useNavigate } from "react-router-dom";
+
 
 import './Login.css';
 import Navbar from '../../components-utils/header/NavBar';
 import Footer from '../../components-utils/footer/Footer';
 
 // ---------------LOGIN-AREA RENDERIZATION--------------------
-export default class loginArea extends Component {
-
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            errlog: false
-        };
-
-        this.loginCheck = this.loginCheck.bind(this)
-
-    }
-
-    validations = yup.object().shape({
+const LoginArea = () => {
+    const [errlog, setErrlog] = useState(false);
+    const navigate = useNavigate();
+    
+    const validations = yup.object().shape({
         email: yup.string().email('Digite Um Email Valido').required('Digite Seu Email'),
         password: yup.string().min(6, 'Minimo 6 Caracteres').required('Digite Sua Senha')
     })
 
-    
-    loginCheck(values) {
-        
+
+    function loginCheck(values) {
 
         let eventError = false;
-
+        let logged = false;
+        
         if (!eventError) {
 
             axios.get('https://api.airtable.com/v0/app6wQWfM6eJngkD4/Login?maxRecords=6&view=Grid%20view',
@@ -42,7 +34,7 @@ export default class loginArea extends Component {
                     }
                 })
                 .then(resp => {
-                    let logged = false;
+                    console.log(resp)
 
                     resp.data.records.filter(squad => {
                         if (squad.fields.Squad === '291121' & values.email === squad.fields.Email & values.password === squad.fields.Senha) {
@@ -51,56 +43,47 @@ export default class loginArea extends Component {
                         } return false
                     })
                     if (logged) {
-                        console.log('logou no sistema')   
-                        let navigate = useNavigate();
                         
-                        navigate.push("/sobre")
-                        
-                             
-                        // axios.post('https://api.airtable.com/v0/app6wQWfM6eJngkD4/Login?maxRecords=6&view=Grid%20view',{ values },{
-                        //     headers: {
-                        //         'Authorization': 'Bearer key2CwkHb0CKumjuM',
-                        //         'content-type': 'text/json'
-                        //     }                            
-                        // }).then(resp => console.log(resp))
-
+                        navigate('/results')
                     } else {
-                        this.setState({ errlog: true })
+
+                        values.email = "";
+                        values.password = "";
+
+                        setErrlog(true)
                     }
-                })
+                }).catch(err => console.log("erro" + err))
         }
     }
 
-
-    render() {
-        return (
-            <>
-                <Navbar layout="login" />
-                <div style={{ display: this.state.errlog ? "block" : "none"}}><h1>Verifique email e senha</h1></div>
-                <div className='loginArea' onClick={() => this.setState({ errlog: false })}>
-                    <Formik validationSchema={this.validations} onSubmit={this.loginCheck} initialValues={{}} >
-                        <Form className="formLogin">
-                            <h2 className="loginH2">Login</h2>
+    return (
+        <>
+            <Navbar layout="login" />
+            <div className='loginArea' onClick={() => setErrlog(false)} >
+                <Formik validationSchema={validations} onSubmit={loginCheck} initialValues={{}} >
+                    <Form className="formLogin">
+                        <label style={{ display: errlog ? "block" : "none", color: 'red' }}>Verifique email e senha</label>
+                        <h2 className="loginH2">Login</h2>
+                        <div>
+                            <Field name='email' className="field" placeHolder="Usuário" type="email" />
                             <div>
-                                <Field name='email' className="field" placeHolder="Usuário" type="email" />
-                                <div>
-                                    <ErrorMessage className="errormessage" component='label' name="email" />
-                                </div>
+                                <ErrorMessage className="errormessage" component='label' name="email" />
                             </div>
+                        </div>
+                        <div>
+                            <Field name='password' placeHolder="Senha" className="field" type='password' />
                             <div>
-                                <Field name='password' placeHolder="Senha" className="field" type='password' />
-                                <div>
-                                    <ErrorMessage className="errormessage" component='label' name="password" />
-                                </div>
+                                <ErrorMessage className="errormessage" component='label' name="password" />
                             </div>
-                            <button type="submit">ACESSAR</button>
-                        </Form>
-                    </Formik>
-                </div>
-                <Footer />
-            </>
-        )
-    }
+                        </div>
+                        <button type="submit">ACESSAR</button>
+                    </Form>
+                </Formik>
+            </div>
+            <Footer />
+        </>
+    )
 }
 
+export default LoginArea
 

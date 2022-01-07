@@ -1,7 +1,13 @@
 import React from "react";
 import '../../login/sub-components/List-results.css'
+
+
+
+
 export default function results() {
+
     return (
+
         <div className="resultsHero">
             <div className="resultsList">
                 <h2>Buscas realizadas</h2>
@@ -14,18 +20,17 @@ export default function results() {
                         </tr>
                     </thead>
                     <tbody >
-                    <tr>
-                        <td className="tableLeft">#hashtagname</td>
-                        <td>25/02</td>
-                        <td>09:30</td>
-                    </tr>
-                    <tr>
-                        <td className="tdBorder" colSpan="3"></td>
-                    </tr>
-                </tbody>
-            </table>
-
-        </div>
+                        <tr>
+                            <td className="tableLeft">#hashtagname</td>
+                            <td>25/02</td>
+                            <td>09:30</td>
+                        </tr>
+                        <tr>
+                            <td className="tdBorder" colSpan="3"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div >
     )
 
