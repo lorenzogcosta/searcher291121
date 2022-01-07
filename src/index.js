@@ -10,12 +10,11 @@ import RoutePrivate from './pages/login/sub-components/private';
 import './styles/index.css'
 
 
-// Importação Router
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 //Import Router//
 ReactDOM.render(
-  <BrowserRouter >
+  <BrowserRouter>
     <Routes>
       <Route path="/" exact={true} element={<Home />} />
       <Route path="/sobre" element={<About />} />

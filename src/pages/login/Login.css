@@ -1,4 +1,4 @@
-/* LOGIN CSS */
+ /* LOGIN CSS BODY */
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -15,8 +15,7 @@ body {
     background-image: url('../../assets/mobile-hero-bg.jpg') ;
     background-repeat:no-repeat;   
     background-size: 100% 100%;
-    height:900px;
-   
+    height:900px;   
 }
 
 
@@ -39,7 +38,7 @@ body {
 
 form div{
     width: -webkit-fill-available;
-    width: -moz-available;;
+    width: -moz-available;
 }
 
 
@@ -56,7 +55,6 @@ form div{
     margin-top: 30px;
     border-color: rgba(255,255,255, 0.4);
     height: 25px;
-
 }
 
 .field ::placeholder{
@@ -94,9 +92,7 @@ form div{
 
 
     .errormessage{
-
-        margin-top: 0px;
-        
+        margin-top: 0px;        
     }
     
     
@@ -120,8 +116,7 @@ form div{
         flex-direction: column;
         align-items: center;
         background-color: rgba(2, 2, 31, 0.3);
-        backdrop-filter: blur(10px);
-        
+        backdrop-filter: blur(10px);        
     }
 
     .loginArea button{

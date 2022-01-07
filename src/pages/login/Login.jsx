@@ -1,26 +1,37 @@
+// First Import The Dependencies
+
 import React, { useState } from "react";
 import axios from 'axios';
 import { ErrorMessage, Formik, Form, Field } from "formik";
-import * as yup from 'yup'
+import * as yup from 'yup';
 import { useNavigate } from "react-router-dom";
-import { login } from './utils/Logged'
 
-import './Login.css';
-import Navbar from '../../components-utils/header/NavBar';
-import Footer from '../../components-utils/footer/Footer';
 
-// ---------------LOGIN-AREA RENDERIZATION--------------------
+import { login } from './utils/Logged'; // Component Responsible For Checking Login
+import Navbar from '../../components-utils/header/NavBar'; // Header With Navigates
+import Footer from '../../components-utils/footer/Footer'; // Footer Component
+
+
+import './Login.css'; // Css Style
+
+// ---------------LOGIN-AREA RENDERIZATION-------------------- \\
+
 const LoginArea = () => {
-    const [errlog, setErrlog] = useState(false);
+
+
+    const [errlog, setErrlog] = useState(false); // Div Login Error Check
+    
     const navigate = useNavigate();
 
+    // ------------- Yup Configs Form ----------- \\
     const validations = yup.object().shape({
         email: yup.string().email('Digite Um Email Valido').required('Digite Seu Email'),
         password: yup.string().min(6, 'Minimo 6 Caracteres').required('Digite Sua Senha')
     })
 
-
+    // Function Responsible For Make Request API & Validate User 
     function loginCheck(values) {
+        
 
         let eventError = false;
         let logged = false;
@@ -34,24 +45,23 @@ const LoginArea = () => {
                     }
                 })
                 .then(resp => {
-                    console.log(resp)
-
+                    
                     resp.data.records.filter(squad => {
                         if (squad.fields.Squad === '291121' & values.email === squad.fields.Email & values.password === squad.fields.Senha) {
                             logged = true;
                             return true
                         } return false
                     })
-                    if (logged) {
-                        login();
-                        
+                    if (logged) {                        
+                        login() // Set Key Token At LocalStorage \\
+
                         navigate('/results')
                     } else {
 
                         values.email = "";
                         values.password = "";
 
-                        setErrlog(true)
+                        setErrlog(true) // Show Div Login Error \\
                     }
                 }).catch(err => console.log("erro" + err))
         }
