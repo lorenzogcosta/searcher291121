@@ -1,8 +1,5 @@
 import React from "react";
-import '../../login/sub-components/List-results.css'
-
-
-
+import './List-results.css'
 
 export default function results() {
 
