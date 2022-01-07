@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+}
+
+/* ------------BACKGROUND RESULTS LIST--------------- */
+
+.resultsHero {
+    display: flex;
+    background-image: url('../../assets/about-hero-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 900px;
+
+}
+
+.resultsList {
+    color: aqua;
+    display: flex;
+    align-self: center;
+    margin-top: 10vh;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    width: 330px;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* ----------RESULTS LIST TABLE---------------- */
+
+.resultsList h2 {
+    font-size: xx-large;
+    
+}
+
+.resultsList table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    background-color: rgba(36, 66, 148, 0.3);
+    border-radius: 14px 14px 14px 14px;
+    
+}
+
+.resultsList th {
+    height: 40px;
+    background-color: rgba(0, 12, 46, 0.6);
+    backdrop-filter: blur(30px);
+    
+    
+    
+}
+
+.tableLeft {
+
+    padding-left: 10px;
+}
+
+.resultsList table tr td:first-child{
+    color:white ;
+    
+}
+
+
+.tdBorder{
+
+    border-bottom: 1px grey solid;
+    
+}
+
+
+@media screen and (min-width: 700px) {
+    
+    .resultsList{
+        width: 80%;
+    }
+
+    .resultsList h2{
+        align-self: flex-start;
+    }
+}
