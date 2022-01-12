@@ -25,10 +25,8 @@ const AboutTeam = () => {
         fetch("https://api.airtable.com/v0/app6wQWfM6eJngkD4/Equipe?fields%5B%5D=Squad&fields%5B%5D=Nome&fields%5B%5D=Email&fields%5B%5D=Descrição&fields%5B%5D=Imagem&fields%5B%5D=Github&fields%5B%5D=LinkedIn", requestOptions)
             .then(response => response.json())
             .then(result => {
-                const filteredTeam = result.records.filter((item) => item.fields.Squad === '291121')
-                const isNewArray = Array (filteredTeam)
-                console.log(result.records)
-                setInfoTeam(isNewArray)
+                const filteredTeam = result.records?.filter((item) => item.fields.Squad === '291121')
+                setInfoTeam(filteredTeam)
             })
             .catch(error => console.log('error', error));
     }, [])
@@ -37,29 +35,17 @@ const AboutTeam = () => {
         <section className="about-team">
             <h2 className="about-team__title">Quem somos</h2>
             <div className="about-team__members">
-                {console.log(infoTeam)}
-            <AboutMembers
-                            //  foto={Esther}
-                            nome="Esther Valentim Bacelar"
-                            texto="Estudante - Desenvolvimento FullStack. Trabalhei no desenvolvimento da Home, em HTML, CSS, JS e React"
-                            git="https://github.com/esthervbac"
-                            email="esther.v.bacelar@gmail.com"
-                            linkedin="esther.v.bacelar@gmail.com"
-                        />
-                {/* {infoTeam.map((member) => (
-                    <>
-                        {console.log(member)}
-                        <AboutMembers
-                            //  foto={Esther}
-                            nome="Esther Valentim Bacelar"
-                            texto="Estudante - Desenvolvimento FullStack. Trabalhei no desenvolvimento da Home, em HTML, CSS, JS e React"
-                            git="https://github.com/esthervbac"
-                            email="esther.v.bacelar@gmail.com"
-                            linkedin="esther.v.bacelar@gmail.com"
-                        />
-                    </>
-
-                ))} */}
+                {infoTeam?.map((member, index) => (
+                    <AboutMembers
+                        foto={member.fields.Imagem[0].url}
+                        nome={member.fields.Nome}
+                        texto={member.fields.Descrição}
+                        git={member.fields.Github}
+                        email={member.fields.Email}
+                        linkedin={member.fields.LinkedIn}
+                        key={`id: ${index}`}
+                    />
+                ))}
             </div>
         </section>
     );
