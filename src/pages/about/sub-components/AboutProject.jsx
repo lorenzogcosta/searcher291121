@@ -1,29 +1,37 @@
-import React from "react";
+import React, { useEffect,useState } from "react";
 
 //import Ilustração
 import ilustração from "../../../assets/svg/about-ilustration.svg";
 
 const AboutProject = () => {
+  const [info, setInfo] = useState(null)
+
+  // Acesso api Airtable para listar as informações di projeto
+  useEffect(() => {
+      let myHeaders = new Headers();
+      myHeaders.append("Authorization", "Bearer key2CwkHb0CKumjuM");
+      myHeaders.append("Cookie", "brw=brwZr09Lc4XQ6bGuH");
+      
+      let requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow'
+      };
+      
+      fetch("https://api.airtable.com/v0/app6wQWfM6eJngkD4/Projeto?fields%5B%5D=Squad&fields%5B%5D=Sobre", requestOptions)
+        .then(response => response.json())
+        .then(result => {
+            const filtered = result.records.filter((item)  => item.id === "recdUExCBWwLsxnu7")
+            setInfo(filtered[0].fields.Sobre)
+          })
+        .catch(error => console.log('error', error));    
+      }, [])
   return (
     <div className='about-project'>
       <main>
         <h1 className='about-tittle'>Sobre o projeto</h1>
         <p className='about-text'>
-          O HashtagFinder é um site responsivo para visualização de mensagens,
-          hashtags e imagens do Twitter, retorna rápido e de forma organizada,
-          os dez resultados mais usados e recentes. É útil para analistas,
-          produtores de conteúdo e outros tipos de profissionais que podem
-          conferir a relevância imediata de um conteúdo específico através de
-          palavras e expressões relacionadas. Esse projeto foi desenvolvido em
-          equipe, durante a capacitação em Desenvolvimento Full Stack, módulo
-          Front-end, da NewTab Academy, de maneira incremental durante os
-          módulos HTML, CSS, Javascript e React. Em seu escopo possui duas
-          páginas acessíveis para qualquer usuário. A primeira, "Home", consiste
-          em um campo para busca da hashtag digitada e uma área para
-          visualização das últimas 10 mensagens e imagens. A segunda, "Sobre",
-          contém uma breve explicação do projeto e outra com os profissionais
-          envolvidos no projeto. Há também uma página restrita para acompanhar
-          as buscas realizadas.
+        {info}
         </p>
       </main>
       <img className='about-image'
