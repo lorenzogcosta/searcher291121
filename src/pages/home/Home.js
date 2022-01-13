@@ -88,9 +88,9 @@ const Home = () => {
     // Set the type of info we want once the user search for a hashtag
     function getTwitterURL(type, hashtag) {
         if (type === 'tweet') {
-            return `https://cors.eu.org/https://api.twitter.com/2/tweets/search/recent?query=${hashtag}&max_results=10&tweet.fields=id,text&user.fields=name,username,profile_image_url`;
+            return `https://cors.eu.org/https://api.twitter.com/2/tweets/search/recent?query=${hashtag}%20has:hashtags%20-is:retweet%20-is:quote%20has:images&max_results=10&expansions=author_id,attachments.media_keys&user.fields=id,name,username,profile_image_url,url&media.fields=type,url,width,height&tweet.fields=source`;
         } else if (type === 'image') {
-            return `https://cors.eu.org/https://api.twitter.com/2/tweets/search/recent?query=${hashtag}&max_results=10&user.fields=username&media.fields=preview_image_url`;
+            return `https://cors.eu.org/https://api.twitter.com/2/tweets/search/recent?query=${hashtag}%20has:hashtags%20-is:retweet%20-is:quote%20has:images&max_results=10&expansions=author_id,attachments.media_keys&user.fields=id,name,username,profile_image_url,url&media.fields=type,url,width,height&tweet.fields=source`;
         }
     }
 
