@@ -73,6 +73,18 @@ const Home = () => {
         }).catch(e => console.log('erro\n' + e));
     }
 
+    // Save the hashtag searched for the user
+    function handleHashtagChange(event) {
+        setHashtagSearch(event.target.value);
+    }
+
+    // Return the hashtag and the info 
+    function getReturnedInfo() {
+        let returnedInfo = hashtagSearch;
+        returnedInfo = returnedInfo.replace(/#/g, '').trim().toLowerCase();
+        return returnedInfo;
+    }
+
     return (
         <>
             <NavBar layout="home" />
