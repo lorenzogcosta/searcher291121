@@ -23,13 +23,56 @@ const Home = () => {
     const [hashtagSearch, setHashtagSearch] = useState(''); // Set the hashtag that the user wants to search
     const [lastHashtag, setLastHashtag] = useState('hashtag'); // Keep the last hashtag searched for the searched list page
 
-    useEffect (() => {
-        if(hashtagSearch.trim().length !== 0) {
+    useEffect(() => {
+        if (hashtagSearch.trim().length !== 0) {
             searchTweets(hashtagSearch);
         }
 
     }, [hashtagSearch]);
-    
+
+    // Get the date that the hashtag was searched
+    function getDate() {
+        const date = new Date();
+        const day = String(date.getDate()).padStart(2, '0');
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const year = date.getFullYear();
+        return `${day}/${month}/${year}`;
+    }
+
+    // Get the hours and minutes that the hashtag was searched
+    function getHour() {
+        const date = new Date();
+        const hour = String(date.getHours()).padStart(2, '0');
+        const minute = String(date.getMinutes()).padStart(2, '0');
+        return `${hour}:${minute}`;
+    }
+
+    // Set the API link to save the hashtag infos required
+    function getAirtableURL() {
+        return `https://api.airtable.com/v0/app6wQWfM6eJngkD4/Buscas`;
+    }
+
+    // Save all info required after the hashtag was searched
+    function saveSearch(hashtag) {
+        axios.post(getAirtableURL(), {
+            "saved": [
+                {
+                    "fields": {
+                        "Squad": "291121",
+                        "Hashtag": hashtag,
+                        "Data": getDate(),
+                        "Hora": getHour()
+                    }
+                }
+            ]
+        }, {
+            headers: {
+                "Authorization": "Bearer key2CwkHb0CKumjuM",
+                "Content-Type": "application/json"
+            }
+        }).catch(e => console.log('erro\n' + e));
+    }
+
     return (
         <>
             <NavBar layout="home" />
@@ -56,20 +99,20 @@ const Home = () => {
             <div className={styles.mobileTabs}>
                 <div className={styles.changingResults}>
                     <span
-                    onClick={() => setTabActive('tweets')}
+                        onClick={() => setTabActive('tweets')}
                         style={{
                             color: `${tabActive === 'tweets' ? '#72EFDB' : 'white'}`,
                         }}
                     >
-                    Tweets
+                        Tweets
                     </span>
                     <span
                         onClick={() => setTabActive('images')}
-                            style={{
-                                color: `${tabActive === 'images' ? '#72EFDB' : 'white'}`,
-                            }}
+                        style={{
+                            color: `${tabActive === 'images' ? '#72EFDB' : 'white'}`,
+                        }}
                     >
-                    Imagens
+                        Imagens
                     </span>
                 </div>
                 <div className={styles.tabs}>
@@ -86,30 +129,30 @@ const Home = () => {
                 <div className={styles.content}>
                     <div className={styles.imagesResults}>
                         <ul>
-                            <li><ImagesResults/></li>
+                            <li><ImagesResults /></li>
                         </ul>
                     </div>
                     <div className={styles.tweetsResults}>
                         <ul>
-                            <li><TweetsResults/></li>
+                            <li><TweetsResults /></li>
                         </ul>
                     </div>
 
                 </div>
                 <div className={styles.contentResponsive}>
                     {tabActive === 'images' ? (
-                    <div className={styles.imagesResults}>
-                        <ul>
-                            <li><ImagesResults/></li>
-                        </ul>
-                    </div>
+                        <div className={styles.imagesResults}>
+                            <ul>
+                                <li><ImagesResults /></li>
+                            </ul>
+                        </div>
                     ) : (
-                    <div className={styles.tweetsResults}>
-                        <ul>
-                            <li><TweetsResults/></li>
-                        </ul>
-                    </div>
-                    )}                    
+                        <div className={styles.tweetsResults}>
+                            <ul>
+                                <li><TweetsResults /></li>
+                            </ul>
+                        </div>
+                    )}
                 </div>
             </div>
             <Footer />
