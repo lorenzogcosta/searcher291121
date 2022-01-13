@@ -218,14 +218,17 @@ const Home = () => {
                         <h1>Encontre hashtags de maneira fácil.</h1>
                         <h2>Digite o que deseja no campo de buscas e confira os resultados do Twitter abaixo</h2>
                     </div>
-                    <form>
-                        <button>
+                    <form onSubmit={submitForm}>
+                        <button onClick={lidarInputVazio}>
                             <img src={iconSearch} alt="Icon Search" />
                         </button>
                         <input
                             type="text"
                             placeholder="Buscar..."
+                            id="inputSearch"
                             className={styles.inputSearch}
+                            value={hashtagSearch}
+                            onChange={handleHashtagChange}
                             maxLength="140"
                             required
                         />
@@ -235,20 +238,20 @@ const Home = () => {
             <div className={styles.mobileTabs}>
                 <div className={styles.changingResults}>
                     <span
-                        onClick={() => setTabActive('tweets')}
+                    onClick={() => setTabActive('tweets')}
                         style={{
                             color: `${tabActive === 'tweets' ? '#72EFDB' : 'white'}`,
                         }}
                     >
-                        Tweets
+                    Tweets
                     </span>
                     <span
                         onClick={() => setTabActive('images')}
-                        style={{
-                            color: `${tabActive === 'images' ? '#72EFDB' : 'white'}`,
-                        }}
+                            style={{
+                                color: `${tabActive === 'images' ? '#72EFDB' : 'white'}`,
+                            }}
                     >
-                        Imagens
+                    Imagens
                     </span>
                 </div>
                 <div className={styles.tabs}>
@@ -261,34 +264,83 @@ const Home = () => {
                 </div>
             </div>
             <div className={styles.homeContent}>
-                <h2>Exibindo os 10 resultados mais recentes para #</h2>
+                <h2>Exibindo os 10 resultados mais recentes para #{lastHashtag}</h2>
                 <div className={styles.content}>
                     <div className={styles.imagesResults}>
-                        <ul>
-                            <li><ImagesResults /></li>
-                        </ul>
+                    {imagesResults.length === 0 ? (
+                                <div></div>
+                            ) : (
+                                <ul>
+                                {
+                                    imagesResults.map(
+                                        (result, index) => (
+                                            <li key={index}>
+
+                                                <ImagesResults result={result} />
+                                            </li>
+                                        )
+                                    )
+                                }
+                                </ul>
+                        )}
                     </div>
                     <div className={styles.tweetsResults}>
-                        <ul>
-                            <li><TweetsResults /></li>
-                        </ul>
+                    {tweetsResults.length === 0 ? (
+                                <div></div>
+                            ) : (
+                                <ul>
+                                    {
+                                        tweetsResults.map(
+                                            (result, index) => (
+                                                <li key={index}>
+                                                    <TweetsResults result={result} />
+                                                </li>
+                                            )
+                                        )
+                                    }
+                                </ul>
+                        )}
                     </div>
 
                 </div>
                 <div className={styles.contentResponsive}>
                     {tabActive === 'images' ? (
-                        <div className={styles.imagesResults}>
-                            <ul>
-                                <li><ImagesResults /></li>
-                            </ul>
-                        </div>
+                    <div className={styles.imagesResults}>
+                        {imagesResults.length === 0 ? (
+                                    <div></div>
+                                ) : (
+                        <ul>
+                        {
+                                        imagesResults.map(
+                                            (result, index) => (
+                                                <li key={index}>
+                                                    <ImagesResults result={result}/>
+                                                </li>
+                                            )
+                                        )
+                                    }
+                                </ul>
+                        )}
+                    </div>
                     ) : (
-                        <div className={styles.tweetsResults}>
-                            <ul>
-                                <li><TweetsResults /></li>
-                            </ul>
-                        </div>
-                    )}
+                    <div className={styles.tweetsResults}>
+                        {tweetsResults.length === 0 ? (
+                                <div>Carregando</div>
+                            ) : (
+                                <ul>
+                                    {
+                                        tweetsResults.map(
+                                            (result, index) => (
+                                                <li key={index}>
+                                                    <TweetsResults result={result}/>
+                                                </li>
+                                            )
+                                        )
+                                    }
+                                </ul>
+                            )}
+                    </div>
+                    )}                    
                 </div>
             </div>
             <Footer />
