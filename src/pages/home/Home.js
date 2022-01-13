@@ -85,6 +85,130 @@ const Home = () => {
         return returnedInfo;
     }
 
+    // Set the type of info we want once the user search for a hashtag
+    function getTwitterURL(type, hashtag) {
+        if (type === 'tweet') {
+            return `https://cors.eu.org/https://api.twitter.com/2/tweets/search/recent?query=${hashtag}&max_results=10&tweet.fields=id,text&user.fields=name,username,profile_image_url`;
+        } else if (type === 'image') {
+            return `https://cors.eu.org/https://api.twitter.com/2/tweets/search/recent?query=${hashtag}&max_results=10&user.fields=username&media.fields=preview_image_url`;
+        }
+    }
+
+    // Search for the tweets that are using the hashtag searched
+    function searchTweets(hashtag) {
+        const headers = {
+            headers: {
+                "Authorization": "Bearer AAAAAAAAAAAAAAAAAAAAAJ98WgEAAAAAVzdJnJbz%2BG8TmzOdvMa1Nptw%2Bp8%3Dm9WMpt9jKkAi8Uqw3Racfq0bijbky733wTxn3dw0s5h1r2AQkR"
+            }
+        }
+
+        // Get the username of the people that tweeted using the hashtag searched
+        axios.get(getTwitterURL(`image`, hashtag), headers).then(
+            response => {
+                console.log("response", response)
+                let { data } = response.data
+                console.log(data)
+
+                // setImagesResults(response.data(
+                //     user => {
+                //         setImagesResults[String(user.id)] = user.username || '';
+                //     }
+                // ));
+
+                // axios.get(getTwitterURL(`image`, hashtag), headers).then(
+                //     response => {
+                //         const usersImage = {};
+                //         response.data.data.usersImage.forEach(
+                //             user => {
+                //                 usersImage[String(user.id)] = user.username || '';
+                //             }
+                //         );
+
+                // Get the tweet images infos that were tweeted using the hashtag searched
+                const results = response.data.data.map(
+                    tweet => {
+                        return {
+                            "url": `https://twitter.com/user/status/${tweet.id}` || '',
+                            "image_url": setImagesResults[String(tweet.attachments.image_keys[0])],
+                            "author": {
+                                "username": setImagesResults[String(tweet.author_id)]
+                            }
+                        };
+                    }
+                );
+
+                setImagesResults(results);
+            }
+        )
+
+        // Get all info required (name, username, image and tweet post)
+        axios.get(getTwitterURL(`tweet`, hashtag), headers).then(
+            response => {
+                setTweetsResults(response.data.data(
+                    user => {
+                        setTweetsResults[String(user.id)] = {
+                            "name": user.name || '',
+                            "username": user.username || '',
+                            "profile_image_url": String(user.profile_image_url).replace('normal', 'bigger') || noImage,
+                            "profile_url": `https://twitter.com/${user.username}` || ''
+                        };
+                    }
+                ));
+
+                // axios.get(getTwitterURL(`tweet`, hashtag), headers).then(
+                //     response => {
+                //         const usersTweet = {};
+                //         response.data.data.usersTweet.forEach(
+                //             user => {
+                //                 usersTweet[String(user.id)] = {
+                //                     "name": user.name || '',
+                //                     "username": user.username || '',
+                //                     "profile_image_url": String(user.profile_image_url).replace('normal', 'bigger')  || noImage,
+                //                     "profile_url": `https://twitter.com/${user.username}`  || ''
+                //                 };
+                //             }
+                //         );
+
+                const results = response.data.data.map(
+                    tweet => {
+                        return {
+                            "content": tweet.text || '',
+                            "url": `https://twitter.com/user/status/${tweet.id}` || '',
+                            "author": TweetsResults[String(tweet.author_id)]
+                        };
+                    }
+                );
+
+                setTweetsResults(results);
+            }
+        );
+    }
+    // Once the hashtag input is filled with a word and the form is submit all the info is saved and the tweets and images are showed bellow
+    function submitForm(event) {
+        event.preventDefault();
+        saveSearch(getReturnedInfo());
+        searchTweets(getReturnedInfo());
+        setLastHashtag(getReturnedInfo());
+        setHashtagSearch('');
+    }
+
+    //If Hashtag input is empty it will alert the user to fill with any word
+    const lidarInputVazio = () => {
+        const inputVazio = document.querySelector('#inputSearch') === '';
+
+        if (inputVazio) {
+            alert('Campo Obrigatório! Preencha o input com a palavra que deseja procurar')
+        }
+    }
+
+    // // If the user put on input Hashtag # it will not show
+    // const inputHashtag = document.querySelector('#inputSearch').value;
+    // inputHashtag.addEventListener("keypress", function(e) {
+    //     if(e.key === "#") {
+    //         e.preventDefault();
+    //     }
+    // })
+
     return (
         <>
             <NavBar layout="home" />
