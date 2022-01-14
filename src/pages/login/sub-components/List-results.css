@@ -69,6 +69,15 @@ body {
     border-bottom: 1px grey solid;
 }
 
+tbody tr{
+    border-bottom: 1px solid black;
+}
+tbody tr:last-child{
+    border-bottom: none;
+}
+
+
+
 /* -------TABLET AND DESKTOP STYLE------- */
 
 @media screen and (min-width: 700px) {

@@ -34,7 +34,22 @@ body {
     align-items: center;
     background-color: rgba(2, 2, 31, 0.3);
     backdrop-filter: blur(10px);
+    opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
 }
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
 
 form div{
     width: -webkit-fill-available;
@@ -71,6 +86,11 @@ form div{
     width: 150px;
     height: 40px;
     font-weight: bold;
+}
+
+.loginArea button:hover{
+    cursor: pointer;
+    border-style: none;
 }
 
 .loginH2 {

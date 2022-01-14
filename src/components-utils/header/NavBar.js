@@ -33,7 +33,7 @@ export default function NavBar({ fixed, layout }) {
                         <ul>
                             <NavLink to="/sobre" style={{ textDecoration: 'none' }} className={styles.itemOne}><img src={aboutIcon} alt="About Area Icon" className={styles.aboutIcon} />&nbsp;&nbsp;&nbsp;Sobre</NavLink>
                             {isLogin() ? (
-                                <NavLink to="/lista-de-buscas" style={{ textDecoration: 'none' }} className={styles.itemTwo}><img src={loginIcon} alt="Login Area Icon" className={styles.loginIcon} />&nbsp;&nbsp;&nbsp;Buscas</NavLink>
+                                <NavLink to="/results" style={{ textDecoration: 'none' }} className={styles.itemTwo}><img src={loginIcon} alt="Login Area Icon" className={styles.loginIcon} />&nbsp;&nbsp;&nbsp;Buscas</NavLink>
                             ) : (
                                 <NavLink to="/login" style={{ textDecoration: 'none' }} className={styles.itemTwo}><img src={loginIcon} alt="Login Area Icon" className={styles.loginIcon} />&nbsp;&nbsp;&nbsp;Login</NavLink>
                             )}

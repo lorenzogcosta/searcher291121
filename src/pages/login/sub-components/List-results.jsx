@@ -8,7 +8,7 @@ export default function Results() {
 
     return (
         <>
-        <NavBar layout="searchList"/>
+            <NavBar layout="searchList" />
             <div className="resultsHero">
                 <div className="resultsList">
                     <h2>Buscas realizadas</h2>
@@ -25,9 +25,6 @@ export default function Results() {
                                 <td className="tableLeft">#hashtagname</td>
                                 <td>25/02</td>
                                 <td>09:30</td>
-                            </tr>
-                            <tr>
-                                <td className="tdBorder" colSpan="3"></td>
                             </tr>
                         </tbody>
                     </table>
