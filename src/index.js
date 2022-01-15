@@ -9,7 +9,6 @@ import RoutePrivate from './pages/login/sub-components/private';
 
 import './styles/index.css'
 
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 //Import Router//

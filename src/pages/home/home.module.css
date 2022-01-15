@@ -130,11 +130,32 @@
 }
 
 .homeContent .content .imagesResults ul li {
+    margin-top: 6vh;
+    margin-left: 2vw;
+    max-width: 100%;
     display: inline-table;
+    justify-content: center;
+    align-items: flex-end;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 21px;
+    overflow: hidden;
+    transition: all .7s;
 }
 
 .homeContent .content .tweetsResults {
     width: 55%;
+}
+
+.homeContent .content .tweetsResults ul li {
+
+    background-color: #1E3E7B17;
+    display: inline-table;
+    border: 1px solid #FFFFFF24;
+    border-radius: 15px;
+    padding: 20px 0;
+    margin-bottom: 6.4vh;
 }
 
 /*---------------Media Queries---------------*/

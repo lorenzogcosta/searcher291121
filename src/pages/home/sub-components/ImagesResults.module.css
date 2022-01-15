@@ -9,25 +9,6 @@
     overflow: hidden;
 }
 
-.imagesResults ul {
-    width: 100%;
-}
-
-.imagesResults ul li {
-    margin-top: 6vh;
-    margin-left: 2vw;
-    max-width: 100%;
-    display: inline-table;
-    justify-content: center;
-    align-items: flex-end;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    border-radius: 21px;
-    overflow: hidden;
-    transition: all .7s;
-}
-
 .imagesResults .dataPost {
     font-family: 'Rubik', sans-serif;
     color: #FFFFFF;
@@ -50,6 +31,10 @@
 .imagesResults .dataPost span:last-child {
     font-size: 21px;
     font-weight: 400;
+}
+
+.greatestView {
+    transform: scale(1.4);
 }
 
 /*---------------Media Queries---------------*/

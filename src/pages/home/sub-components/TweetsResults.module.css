@@ -7,19 +7,6 @@
     justify-content: center;
 }
 
-.tweetsResults ul {
-    width: 100%;
-}
-
-.tweetsResults ul li {
-    background-color: #1E3E7B17;
-    display: inline-table;
-    border: 1px solid #FFFFFF24;
-    border-radius: 15px;
-    padding: 20px 0;
-    margin-bottom: 6.4vh;
-}
-
 .tweetsResults .tweetsResultsContent {
     margin-bottom: 30px;
     display: flex;
@@ -320,6 +307,3 @@
         margin-left: 18vw;
     }
 }
-
-
-
