@@ -91,7 +91,7 @@ const Home = () => {
             return `https://cors.eu.org/https://api.twitter.com/2/tweets/search/recent?query=${hashtag}%20has:hashtags%20-is:retweet%20-is:quote%20has:images&max_results=10&expansions=author_id,attachments.media_keys&user.fields=id,name,username,profile_image_url,url&media.fields=type,url,width,height&tweet.fields=source`;
         } else if (type === 'image') {
             return `https://cors.eu.org/https://api.twitter.com/2/tweets/search/recent?query=${hashtag}%20has:hashtags%20-is:retweet%20-is:quote%20has:images&max_results=10&expansions=author_id,attachments.media_keys&user.fields=id,name,username,profile_image_url,url&media.fields=type,url,width,height&tweet.fields=source`;
-        }
+        }                                                                                                                                                 
     }
 
     // Search for the tweets that are using the hashtag searched
@@ -105,37 +105,23 @@ const Home = () => {
         // Get the username of the people that tweeted using the hashtag searched
         axios.get(getTwitterURL(`image`, hashtag), headers).then(
             response => {
-                console.log("response", response)
-                let { data } = response.data
+            console.log("response", response)
+            let { data } = response.data 
                 console.log(data)
 
-                // setImagesResults(response.data(
-                //     user => {
-                //         setImagesResults[String(user.id)] = user.username || '';
-                //     }
-                // ));
-
-                // axios.get(getTwitterURL(`image`, hashtag), headers).then(
-                //     response => {
-                //         const usersImage = {};
-                //         response.data.data.usersImage.forEach(
-                //             user => {
-                //                 usersImage[String(user.id)] = user.username || '';
-                //             }
-                //         );
-
-                // Get the tweet images infos that were tweeted using the hashtag searched
-                const results = response.data.data.map(
-                    tweet => {
-                        return {
-                            "url": `https://twitter.com/user/status/${tweet.id}` || '',
-                            "image_url": setImagesResults[String(tweet.attachments.image_keys[0])],
-                            "author": {
-                                "username": setImagesResults[String(tweet.author_id)]
-                            }
-                        };
-                    }
-                );
+            //Get the tweet images infos that were tweeted using the hashtag searched
+            let results = {}
+            results = response.data.data.map(
+                tweet => {
+                    return {
+                        "url": `https://twitter.com/user/status/${tweet.id}` || '',
+                        "image_url": setImagesResults[String(tweet.attachments.image_keys)],
+                        "author": {
+                            "username": setImagesResults[String(tweet.author_id)]
+                        }
+                    };
+                }
+            );
 
                 setImagesResults(results);
             }
@@ -144,7 +130,7 @@ const Home = () => {
         // Get all info required (name, username, image and tweet post)
         axios.get(getTwitterURL(`tweet`, hashtag), headers).then(
             response => {
-                setTweetsResults(response.data.data(
+                setTweetsResults(response.data.data.map(( user ) => 
                     user => {
                         setTweetsResults[String(user.id)] = {
                             "name": user.name || '',
@@ -155,21 +141,7 @@ const Home = () => {
                     }
                 ));
 
-                // axios.get(getTwitterURL(`tweet`, hashtag), headers).then(
-                //     response => {
-                //         const usersTweet = {};
-                //         response.data.data.usersTweet.forEach(
-                //             user => {
-                //                 usersTweet[String(user.id)] = {
-                //                     "name": user.name || '',
-                //                     "username": user.username || '',
-                //                     "profile_image_url": String(user.profile_image_url).replace('normal', 'bigger')  || noImage,
-                //                     "profile_url": `https://twitter.com/${user.username}`  || ''
-                //                 };
-                //             }
-                //         );
-
-                const results = response.data.data.map(
+                let results = response.data.data.map(
                     tweet => {
                         return {
                             "content": tweet.text || '',

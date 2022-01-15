@@ -26,7 +26,7 @@ const ImagesResults = ({ result }) => {
         >
                 <div className={styles.dataPost}>
                     <span>Postado por:</span>
-                    <span>@{result.author.username}</span>
+                    <span>@{result.username}</span>
                 </div>
         </div>
     )
