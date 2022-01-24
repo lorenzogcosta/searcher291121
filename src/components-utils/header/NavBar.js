@@ -23,8 +23,10 @@ export default function NavBar ({ fixed, layout }) {
     }
 
     return (
-        <div className={styles.navbar} style={{ position: `${fixed === 'true' ? 'fixed' : 'initial'}` }}>
-            <div className={styles.container}>
+        <div 
+            className={styles.navbar} 
+            style={{ position: `${fixed === 'true' ? 'fixed' : 'initial'}` }}
+        >
                 <NavLink to="/" style={{ textDecoration: 'none' }} className={styles.logo}>hashtag<span>finder</span></NavLink>
 
                 {/*
@@ -61,7 +63,6 @@ export default function NavBar ({ fixed, layout }) {
                         </ul>
                     </nav>
                 )}
-            </div>
         </div>
     );
 }
