@@ -109,24 +109,10 @@ const Home = () => {
                 let { data } = response.data
                 console.log(data)
 
-                // setImagesResults(response.data(
-                //     user => {
-                //         setImagesResults[String(user.id)] = user.username || '';
-                //     }
-                // ));
-
-                // axios.get(getTwitterURL(`image`, hashtag), headers).then(
-                //     response => {
-                //         const usersImage = {};
-                //         response.data.data.usersImage.forEach(
-                //             user => {
-                //                 usersImage[String(user.id)] = user.username || '';
-                //             }
-                //         );
 
                 // Get the tweet images infos that were tweeted using the hashtag searched
                 let results = {}
-                results = response.data.data.map(
+               results = response.data.data.map(
                     tweet => {
                         return {
                             "url": `https://twitter.com/user/status/${tweet.id}` || '',
@@ -151,25 +137,11 @@ const Home = () => {
                         setTweetsResults[String(user.id)] = {
                             "name": user.name || '',
                             "username": user.username || '',
-                            "profile_image_url": String(user.profile_image_url).replace('normal', 'bigger') || noImage,
+                            "profile_image_url": String(user.profile_image_url[0]).replace('normal', 'bigger') || noImage,
                             "profile_url": `https://twitter.com/${user.username}` || ''
                         };
                     }
                 ));
-
-                // axios.get(getTwitterURL(`tweet`, hashtag), headers).then(
-                //     response => {
-                //         const usersTweet = {};
-                //         response.data.data.usersTweet.forEach(
-                //             user => {
-                //                 usersTweet[String(user.id)] = {
-                //                     "name": user.name || '',
-                //                     "username": user.username || '',
-                //                     "profile_image_url": String(user.profile_image_url).replace('normal', 'bigger')  || noImage,
-                //                     "profile_url": `https://twitter.com/${user.username}`  || ''
-                //                 };
-                //             }
-                //         );
 
                 let results = response.data.data.map(
                     tweet => {
@@ -203,13 +175,6 @@ const Home = () => {
         }
     }
 
-    // // If the user put on input Hashtag # it will not show
-    // const inputHashtag = document.querySelector('#inputSearch').value;
-    // inputHashtag.addEventListener("keypress", function(e) {
-    //     if(e.key === "#") {
-    //         e.preventDefault();
-    //     }
-    // })
 
     return (
         <>

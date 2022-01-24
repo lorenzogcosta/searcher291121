@@ -70,7 +70,7 @@ body {
 }
 
 tbody tr{
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgba(65, 114, 247, 0.4);
 }
 tbody tr:last-child{
     border-bottom: none;

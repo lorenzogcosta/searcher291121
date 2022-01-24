@@ -1,10 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "../../../components-utils/footer/Footer";
 import NavBar from "../../../components-utils/header/NavBar";
-
+import axios from 'axios';
 
 import './List-results.css' // Css Style \\
+
 export default function Results() {
+
+    const [squad, setSquad] = useState([])
+
+    function urlSearch() {
+        return "https://api.airtable.com/v0/app6wQWfM6eJngkD4/Buscas?maxRecords=10&view=Grid%20view"
+    }
+
+    axios.get(urlSearch(), {
+        headers: {
+            "Authorization": "Bearer key2CwkHb0CKumjuM"
+        }
+    })
+        .then(resp => {
+
+            let hash = resp.data.records
+
+            setSquad(hash)
+            console.log(squad)
+        })
+        .catch(err => console.log('err' + err))
 
     return (
         <>
@@ -20,12 +41,13 @@ export default function Results() {
                                 <th style={{ WebkitBorderTopRightRadius: "14px" }}>Hora</th>
                             </tr>
                         </thead>
-                        <tbody >
+                        <tbody>{squad.reverse().map((hash) =>
                             <tr>
-                                <td className="tableLeft">#hashtagname</td>
-                                <td>25/02</td>
-                                <td>09:30</td>
-                            </tr>
+                                <td className="tableLeft">{hash.fields.Hashtag}</td>
+                                <td>{hash.fields.Data}</td>
+                                <td>{hash.fields.Hora}</td>
+                            </tr>)
+                        }
                         </tbody>
                     </table>
                 </div>

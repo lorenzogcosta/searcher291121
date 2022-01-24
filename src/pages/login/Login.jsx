@@ -45,8 +45,10 @@ const LoginArea = () => {
                     }
                 })
                 .then(resp => {
+
+                    let dataSquad  = resp.data.records
                     
-                    resp.data.records.filter(squad => {
+                    dataSquad.filter(squad => {
                         if (squad.fields.Squad === '291121' & values.email === squad.fields.Email & values.password === squad.fields.Senha) {
                             logged = true;
                             return true
