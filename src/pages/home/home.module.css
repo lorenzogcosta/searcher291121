@@ -96,7 +96,7 @@
     font-family: 'Rubik', sans-serif;
     color: #FFFFFF;
     font-size: 32px;
-    padding-top: 20px;
+    padding-top: 100px;
     text-align: center;
     font-weight: 500;
 }
@@ -130,32 +130,12 @@
 }
 
 .homeContent .content .imagesResults ul li {
-    margin-top: 6vh;
-    margin-left: 2vw;
-    max-width: 100%;
     display: inline-table;
-    justify-content: center;
-    align-items: flex-end;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    border-radius: 21px;
-    overflow: hidden;
-    transition: all .7s;
 }
 
 .homeContent .content .tweetsResults {
-    width: 55%;
-}
-
-.homeContent .content .tweetsResults ul li {
-
-    background-color: #1E3E7B17;
-    display: inline-table;
-    border: 1px solid #FFFFFF24;
-    border-radius: 15px;
-    padding: 20px 0;
-    margin-bottom: 6.4vh;
+    width: 100%;
+    margin-left: 4%;
 }
 
 /*---------------Media Queries---------------*/
@@ -211,7 +191,7 @@
     }
 }
 
-@media screen and (max-width: 1366px) {
+/* @media screen and (max-width: 1366px) {
     .header .headerContent .titles h1 {
         width: 60%;
         margin-top: 28vh;
@@ -224,7 +204,7 @@
     .homeContent h2 {
         margin-top: 6vh;
     }
-}
+} */
 
 @media screen and (max-width: 1280px) {
     .header .headerContent .titles h1 {

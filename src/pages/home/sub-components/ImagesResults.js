@@ -5,13 +5,13 @@ import styles from './ImagesResults.module.css'
 
 const ImagesResults = ({ result }) => {
 
-    const [className, setClassName] = useState(`${styles.imageResult}`)
+    const [className, setClassName] = useState(`${styles.imagesResults}`)
 
     function changeClassName() {
         if (className.includes('greatestView')) {
-            setClassName(`${styles.imageResult}`)
+            setClassName(`${styles.imagesResults}`)
         } else {
-            setClassName(`${styles.imageResult} ${styles.greatestView}`)
+            setClassName(`${styles.imagesResults} ${styles.greatestView}`)
         }
     }
 
@@ -26,7 +26,7 @@ const ImagesResults = ({ result }) => {
         >
                 <div className={styles.dataPost}>
                     <span>Postado por:</span>
-                    <span>@{result.username}</span>
+                    <span>@{result.author.username}</span>
                 </div>
         </div>
     )
