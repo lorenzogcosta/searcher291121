@@ -247,12 +247,12 @@ const Home = () => {
                                     imagesResults.map(
                                         (result, index) => (
                                             <li key={index}>
-                                                <ImagesResults result={result} />
+                                                <ImagesResults result={result}/>
                                             </li>
                                         )
                                     )
                                 }
-                                </ul>
+                            </ul>
                         )}
                     </div>
                     <div className={styles.tweetsResults}>

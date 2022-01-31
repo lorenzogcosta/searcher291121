@@ -1,9 +1,9 @@
 .imagesResults {
     margin: 22px;
-    width: 180px;
-    height: 180px;
-    min-width: 180px;
-    min-height: 180px;
+    width: 170px;
+    height: 170px;
+    min-width: 170px;
+    min-height: 170px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -13,7 +13,7 @@
     border-radius: 21px;
     overflow: hidden;
     transition: all .7s;
-}
+} 
 
 .imagesResults .dataPost {
     font-family: 'Rubik', sans-serif;
@@ -42,7 +42,7 @@
     transform: scale(1.4);
 }
 
-/*---------------Media Queries---------------*/
+/* ---------------Media Queries---------------
 
 @media screen and (max-width: 2560px) {
     .imagesResults {
@@ -69,7 +69,7 @@
     }
 }
 
-/* @media screen and (max-width: 1366px) {
+ @media screen and (max-width: 1366px) {
     .imagesResults {
         width: 38vw;
         margin-left: -16vw;
@@ -78,7 +78,7 @@
     .imagesResults .dataPost {
         margin-top: -14vh;
     }
-} */
+} 
 
 @media screen and (max-width: 1280px) {
     .imagesResults {
@@ -93,12 +93,12 @@
         margin-left: -30vw;
     }
 
-    /* .imagesResults ul li {
+     .imagesResults ul li {
         min-width: 50px;
         min-height: 50px;
         width: 20%;
         height: 20%;
-    } */
+    } 
 }
 
 @media screen and (max-width: 812px) { 
@@ -108,10 +108,10 @@
         margin-top: 20vh;
     }
 
-    /* .imagesResults ul li img {
+     .imagesResults ul li img {
         width: 150px;
         height: 150px;
-    } */
+    } 
     
     .imagesResults .dataPost {
         margin-top: -13vh;
@@ -134,10 +134,10 @@
         margin-top: 2vh;
     }
 
-    /* .imagesResults ul li img {
+     .imagesResults ul li img {
         width: 250px;
         height: 250px;
-    } */
+    }
 
     .imagesResults .dataPost {
         margin-top: -10vh;
@@ -196,11 +196,11 @@
         margin-left: -2vw;
     }
 
-    /* .imagesResults ul li { 
+     .imagesResults ul li { 
         width: 200px;
         height: 200px;
         margin-left: 3vw;
-    } */
+    } 
 
     .imagesResults .dataPost {
         margin-top: -15vh;
@@ -255,4 +255,4 @@
     .imagesResults .dataPost span:last-child {
         font-size: 13px;
     }
-}
+}  */
