@@ -4,8 +4,7 @@ import React, { useState } from 'react'
 import styles from './ImagesResults.module.css'
 
 const ImagesResults = ({ result }) => {
-
-    const [className, setClassName] = useState(`${styles.imagesResults}`)
+const [className, setClassName] = useState(`${styles.imagesResults}`)
 
     function changeClassName() {
         if (className.includes('greatestView')) {
