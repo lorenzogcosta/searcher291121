@@ -13,19 +13,6 @@
     z-index: 1;
 }
 
-.logo {
-    width: 240px;
-    font-size: 35px;
-    color: white;
-    padding-left: 20px;
-}
-
-span {
-    font-family: 'Rubik', sans-serif;
-    color: #FFF;
-    font-weight: 700;
-}
-
 .navbar .links_navbar,
 .navbar .link_navbar {
     display: flex;
@@ -79,12 +66,6 @@ span {
         align-items: center;
     }
 
-    .logo {
-        width: 180px;
-        font-size: 25px;
-        padding-left: 20px;
-    }
-
     .navbar .linkImgHome img {
         height: 40px;
     }
@@ -106,12 +87,6 @@ span {
         height: 23px;
     }
 
-    .logo {
-        width: 120px;
-        font-size: 20px;
-        padding-left: 20px;
-    }
-
     .navbar .links_navbar {
         width: 220px;
     }
@@ -126,14 +101,5 @@ span {
 
     .navbar .links_navbar .itemOne {
         margin-right: 10px;
-    }
-}
-
-@media screen and (max-width: 425px) {
-    .logo {
-        width: 100px;
-        font-size: 20px;
-        padding-left: 20px;
-        padding-right: 20px;
     }
 }

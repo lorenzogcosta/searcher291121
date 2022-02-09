@@ -7,6 +7,7 @@ import aboutIcon from '../../assets/svg/icon-info-circle.svg'
 import loginIcon from '../../assets/svg/icon-user-alt.svg'
 import homeIcon from '../../assets/svg/icon-home.svg'
 import logoutIcon from '../../assets/svg/icon-power-off.svg'
+import logo from '../../assets/svg/logo.svg'
 
 
 export default function NavBar ({ fixed, layout }) {
@@ -28,9 +29,8 @@ export default function NavBar ({ fixed, layout }) {
             style={{ position: `${fixed === 'true' ? 'fixed' : 'initial'}` }}
         >
                 <NavLink to="/" style={{ textDecoration: 'none' }}
-                    className={styles.linkImgHome, styles.logo}>
-                    hashtag
-                    <span>finder</span>
+                    className={styles.linkImgHome}>
+                    <img src={logo} alt="logo" />
                 </NavLink>
 
                 {/*
