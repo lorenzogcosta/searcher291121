@@ -183,8 +183,8 @@ const Home = () => {
 
     return (
         <>
-            <NavBar fixed="true" layout="home" />
             <div className={styles.header}>
+                <NavBar fixed="true" layout="home" />
                 <div className={styles.headerContent}>
                     <div className={styles.titles}>
                         <h1>Encontre hashtags de maneira fácil.</h1>
