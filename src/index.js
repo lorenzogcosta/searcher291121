@@ -7,7 +7,6 @@ import Login from './pages/login/Login'
 
 import './styles/index.css'
 
-
 // Importação Router
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 

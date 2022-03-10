@@ -1,65 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 
+//CSS
 import styles from './ImagesResults.module.css'
 
-import imagemTeste from '../../../assets/images.jpg'
+const ImagesResults = ({ result }) => {
+const [className, setClassName] = useState(`${styles.imagesResults}`)
 
-const ImagesResults = () => {
+    function changeClassName() {
+        if (className.includes('greatestView')) {
+            setClassName(`${styles.imagesResults}`)
+        } else {
+            setClassName(`${styles.imagesResults} ${styles.greatestView}`)
+        }
+    }
 
     return (
-        <div className={styles.imagesResults}>
-            <ul>
-                <li><img src={imagemTeste} alt="Imagem Teste" />
-                    <div className={styles.dataPost}>
-                        <span>Postado por:</span>
-                        <span>@twitterusername</span>
-                    </div></li>
-                <li><img src={imagemTeste} alt="Imagem Teste" />
-                    <div className={styles.dataPost}>
-                        <span>Postado por:</span>
-                        <span>@twitterusername</span>
-                    </div></li>
-                <li><img src={imagemTeste} alt="Imagem Teste" />
-                    <div className={styles.dataPost}>
-                        <span>Postado por:</span>
-                        <span>@twitterusername</span>
-                    </div></li>
-                <li><img src={imagemTeste} alt="Imagem Teste" />
-                    <div className={styles.dataPost}>
-                        <span>Postado por:</span>
-                        <span>@twitterusername</span>
-                    </div></li>
-                <li><img src={imagemTeste} alt="Imagem Teste" />
-                    <div className={styles.dataPost}>
-                        <span>Postado por:</span>
-                        <span>@twitterusername</span>
-                    </div></li>
-                <li><img src={imagemTeste} alt="Imagem Teste" />
-                    <div className={styles.dataPost}>
-                        <span>Postado por:</span>
-                        <span>@twitterusername</span>
-                    </div></li>
-                <li><img src={imagemTeste} alt="Imagem Teste" />
-                    <div className={styles.dataPost}>
-                        <span>Postado por:</span>
-                        <span>@twitterusername</span>
-                    </div></li>
-                <li><img src={imagemTeste} alt="Imagem Teste" />
-                    <div className={styles.dataPost}>
-                        <span>Postado por:</span>
-                        <span>@twitterusername</span>
-                    </div></li>
-                <li><img src={imagemTeste} alt="Imagem Teste" />
-                    <div className={styles.dataPost}>
-                        <span>Postado por:</span>
-                        <span>@twitterusername</span>
-                    </div></li>
-                <li><img src={imagemTeste} alt="Imagem Teste" />
-                    <div className={styles.dataPost}>
-                        <span>Postado por:</span>
-                        <span>@twitterusername</span>
-                    </div></li>
-            </ul>
+        <div 
+            className={className}
+                style={{
+                    backgroundImage: `url(${result.image_url})`
+                }}
+                onClick={changeClassName}
+                onBlur={() => alert()}
+        >
+                <div className={styles.dataPost}>
+                    <span>Postado por:</span>
+                    <span>@{result.author.username}</span>
+                </div>
         </div>
     )
 }
