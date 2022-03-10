@@ -11,7 +11,6 @@ import { login } from './utils/Logged'; // Component Responsible For Checking Lo
 import Navbar from '../../components-utils/header/NavBar'; // Header With Navigates
 import Footer from '../../components-utils/footer/Footer'; // Footer Component
 
-
 import './Login.css'; // Css Style
 
 // ---------------LOGIN-AREA RENDERIZATION-------------------- \\
