@@ -31,7 +31,6 @@ import './List-results.css' // Css Style \\
 
     }).catch(err => console.log('err' + err))
 
-    console.log(squad)
 
     return (
         <>
