@@ -70,7 +70,7 @@ const LoginArea = () => {
 
     return (
         <>
-            <Navbar layout="login" />
+            <Navbar fixed="true" layout="login" />
             <div className='loginArea' onClick={() => setErrlog(false)} >
                 <Formik validationSchema={validations} onSubmit={loginCheck} initialValues={{}} >
                     <Form className="formLogin">
