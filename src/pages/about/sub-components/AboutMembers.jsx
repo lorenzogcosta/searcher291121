@@ -8,7 +8,6 @@ import linkedinIcon from '../../../assets/svg/icon-awesome-linkedin.svg';
 const AboutMembers = (props) => {
     return (
         <div className="about-members">
-            {console.log('props', props)}
             <img
                 className="about-member__imagem"
                 src={props.foto}
@@ -26,7 +25,7 @@ const AboutMembers = (props) => {
                         alt="Github"
                     />
                 </a>
-                <a href={props.email}>
+                <a href={"mailto:" + props.email}>
                     <img
                         className="about-member__link"
                         src={emailIcon}

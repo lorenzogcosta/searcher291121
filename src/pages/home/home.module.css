@@ -1,12 +1,11 @@
 /*---------------Header---------------*/
 
 .header {
-    max-width: 100%;
     height: 90vh;
     width: 100vw;
     background: url(../../assets/hero-bg.jpg);
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
 }
 
 .header .headerContent {
@@ -19,9 +18,8 @@
 
 .header .headerContent .titles h1 {
     margin-top: 200px;
-    font-family: 'Rubik', sans-serif;
     font-size: 3.5rem;
-    width: 55%;
+    width: 50%;
     color: #FFF;
     font-weight: 700;
     opacity: 1;
@@ -30,7 +28,7 @@
 
 .header .headerContent .titles h2 {
     font-weight: 400;
-    width: 45%;
+    width: 40%;
     color: #FFF;
 }
 
@@ -60,7 +58,7 @@
     height: 100%;
     width: calc(100% - 30px);
     font-size: 2rem;
-    color: white;
+    color: #FFFFFF;
     border: none;
     background-color: transparent;
 }
@@ -88,15 +86,13 @@
 
 .homeContent {
     margin-top: -140px;
-    width: 100%;
+    width: 100vw;
     background-color: #0A1744;
 }
 
 .homeContent h2 {
-    font-family: 'Rubik', sans-serif;
     color: #FFFFFF;
-    font-size: 32px;
-    padding-top: 20px;
+    padding-top: 40px;
     text-align: center;
     font-weight: 500;
 }
@@ -130,198 +126,96 @@
 }
 
 .homeContent .content .imagesResults ul li {
-    margin-top: 6vh;
-    margin-left: 2vw;
-    max-width: 100%;
     display: inline-table;
-    justify-content: center;
-    align-items: flex-end;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    border-radius: 21px;
-    overflow: hidden;
-    transition: all .7s;
-}
+}  
 
 .homeContent .content .tweetsResults {
     width: 55%;
 }
 
-.homeContent .content .tweetsResults ul li {
+/* ---------------Media Queries--------------- */
 
-    background-color: #1E3E7B17;
-    display: inline-table;
-    border: 1px solid #FFFFFF24;
-    border-radius: 15px;
-    padding: 20px 0;
-    margin-bottom: 6.4vh;
+@media only screen and (max-width: 1400px) {
+    .header .headerContent h1 {
+        width: 60%;
+        min-width: 570px;
+    }
+
+    .header .headerContent h2 {
+        width: 50%;
+        min-width: 500px;
+    }
 }
 
-/*---------------Media Queries---------------*/
+@media only screen and (max-width: 1024px) {
+    .homeContent h2 {
+        padding-top: 100px;
+    }
+    
+}
 
-@media screen and (max-width: 2560px) {
-    .header .headerContent .titles h1 {
-        width: 30%;
-        margin-top: 35vh;
-        margin-bottom: 2vh;
+@media only screen and (max-width: 1000px) {
+    .header .headerContent h1 {
+        width: 80%;
+        min-width: 570px;
     }
 
-    .header .headerContent .titles h2 {
-        width: 25%;
-    }
-
-    .header .headerContent form {
-        margin-top: 20vh;
+    .header .headerContent h2 {
+        width: 70%;
+        min-width: 500px;
     }
 
     .homeContent .content {
-        width: 50%;
-    }
-}
-
-
-@media screen and (max-width: 1920px) {
-    .header .headerContent .titles h1 {
-        width: 40%;
-        margin-top: 30vh;
-    }
-
-    .header .headerContent .titles h2 {
-        width: 35%;
-    }
-
-    .header .headerContent form {
-        margin-top: 23vh;
-    }
-}
-
-@media screen and (max-width: 1440px) {
-    .header .headerContent .titles h1 {
-        width: 55%;
-        margin-top: 20vh;
-    }
-
-    .header .headerContent .titles h2 {
-        width: 45%;
-    }
-
-    .header .headerContent form {
-        margin-top: 32vh;
-    }
-}
-
-@media screen and (max-width: 1366px) {
-    .header .headerContent .titles h1 {
-        width: 60%;
-        margin-top: 28vh;
-    }
-
-    .header .headerContent form {
-        margin-top: 19vh;
-    }
-
-    .homeContent h2 {
-        margin-top: 6vh;
-    }
-}
-
-@media screen and (max-width: 1280px) {
-    .header .headerContent .titles h1 {
-        width: 60%;
-        margin-top: 25vh;
-    }
-
-    .header .headerContent .titles h2 {
-        width: 50%;
-    }
-
-    .header .headerContent form {
-        margin-top: 21vh;
+        width: 100%;
     }
 
     .homeContent .content .imagesResults {
-        margin-left: 7vw;
-    }
-
-    .homeContent .content .tweetsResults {
-        margin-left: 10vw;
-    }
-
-    .homeContent h2 {
-        margin-top: 5vh;
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .header .headerContent .titles h1 {
-        width: 70%;
-        font-size: 3rem;
-    }
-
-    .header .headerContent .titles h2 {
-        width: 55%;
-        font-size: 20px;
-    }
-
-    .homeContent h2 {
-        font-size: 25px;
-    }
-}
-
-@media screen and (max-width: 812px) {
-    .homeContent h2 {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .header .headerContent .titles h1 {
-        font-size: 40px;
-        width: 75%;
-        margin-top: 17vh;
-    }
-
-    .header .headerContent .titles h2 {
-        width: 60%;
-        font-size: 17px;
-        margin-bottom: 2vh;
-    }
-
-    .header .headerContent form {
-        margin-top: 32vh;
-    }
-
-    .homeContent h2,
-    .homeContent .content {
-        display: none;
-    }
-
-    .homeContent .contentResponsive {
-        width: 100%;
-        display: block;
-    }
-
-    .homeContent .contentResponsive .imagesResults {
-        padding: 30px 0 70px;
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
+        width: 50%;
+        min-width: 200px;
         justify-content: center;
     }
 
-    .homeContent .contentResponsive .imagesResults ul {
-        width: 100%;
-        text-align: center;
+    .homeContent .content .tweetsResults {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    .header .headerContent {
+        min-width: 500px;
     }
 
-    .homeContent .contentResponsive .imagesResults ul li {
-        display: inline-table;
+    .header .headerContent .titles h1 {
+        font-size: 2.5rem;
     }
 
-    .homeContent .contentResponsive .tweetsResults {
-        padding: 30px 0 70px;
+    .header .headerContent .titles h2 {
+        font-size: 1.5rem;
+    }
+
+    .header .headerContent .titles,
+    .header .headerContent form {
+        min-width: 500px;
+    }
+
+    .header .headerContent form button img {
+        padding: 15px;
+    }
+
+    .header .headerContent form .inputSearch,
+    .header .headerContent form .inputSearch::placeholder {
+        font-size: 1.4rem;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    .header .headerContent,
+    .header .headerContent, .titles,
+    .header .headerContent, .titles h1,
+    .header .headerContent, .titles h2,
+    .header .headerContent, form {
+        width: 90%;
+        min-width: 90%;
     }
 
     .mobileTabs .changingResults {
@@ -329,6 +223,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        padding-top: 180px;
     }
 
     .mobileTabs .changingResults span {
@@ -355,287 +250,72 @@
         transition: all 0.5s;
     }
 
-    .mobileTabs .changingResults span {
-        font-size: 30px;
-    }
-}
-
-@media screen and (max-width: 736px) {
-    .header {
-        height: 260vh;
-        width: 100vw;
+    .homeContent h2,
+    .homeContent .content {
+        display: none;
     }
 
-    .header .headerContent form {
-        margin-top: 16vh;
-        margin-left: -4vw;
-    }
-
-    .mobileTabs {
-        margin-top: -45vh;
-    }
-
-    .mobileTabs .changingResults span {
-        font-size: 25px;
-    }
-}
-
-@media screen and (max-width: 720px) {
-    .header {
-        height: 120vh;
-        width: 100vw;
-    }
-
-    .header .headerContent form {
-        margin-top: 19vh;
-        margin-left: -5vw;
-    }
-
-    .mobileTabs {
-        margin-top: -26vh;
-    }
-
-    .mobileTabs .changingResults span {
-        font-size: 25px;
-    }
-}
-
-@media screen and (max-width: 667px) {
-    .header {
-        height: 280vh;
-        width: 100vw;
-    }
-
-    .header .headerContent .titles h1 {
-        font-size: 40px;
-        width: 93%;
-    }
-
-    .header .headerContent .titles h2 {
-        width: 70%;
-    }
-
-    .header .headerContent form {
-        margin-left: -9vw;
-    }
-
-    .mobileTabs {
-        margin-top: -37vh;
-    }
-}
-
-@media screen and (max-width: 653px) {
-    .header {
-        height: 300vh;
-        width: 100vw;
-    }
-
-    .header .headerContent .titles h1 {
-        font-size: 40px;
-        width: 90%;
-    }
-
-    .header .headerContent .titles h2 {
-        width: 70%;
-    }
-    
-    .mobileTabs {
-        margin-top: -60vh;
-    }
-
-    .header .headerContent form {
-        max-width: 380px;
-        min-width: 80px;
+    .homeContent .contentResponsive {
         width: 100%;
-        height: 80px;
-        margin-top: 15vh;
+        display: block;
+    }
+
+    .homeContent .contentResponsive .imagesResults {
+        padding: 100px 0 70px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .homeContent .contentResponsive .imagesResults ul {
+        width: 100%;
+        text-align: center;
+    }
+
+    .homeContent .contentResponsive .imagesResults ul li {
+        display: inline-table;
+    }
+
+    .homeContent .contentResponsive .tweetsResults {
+        padding: 100px 0 70px;
     }
 }
 
-@media screen and (max-width: 640px) {
-    .header .headerContent form {
-        margin-left: 7vw;
-    }
-}
-
-@media screen and (max-width: 568px) {
-    .header .headerContent .titles h1 {
-        width: 99%;
-    }
-
-    .header .headerContent .titles h2 {
-        width: 90%;
-        font-size: 20px;
-    }
-
-    .header .headerContent form {
-        margin-left: 5vw;
-    }
-}
-
-@media screen and (max-width: 540px) {
+@media only screen and (max-width: 550px) {
     .header {
-        height: 150vh;
-        width: 100vw;
         background: url(../../assets/mobile-hero-bg.jpg);
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-    }
-
-    .mobileTabs {
-        margin-top: -20vh;
-    }
-}
-
-@media screen and (max-width: 425px) {
-    .header .headerContent .titles h1 {
-        font-size: 30px;
-        margin-top: 10vh;
-        width: 100%;
-        margin-left: -3vw;
-    }
-
-    .header .headerContent .titles h2 {
-        font-size: 18px;
-        width: 110%;
-        margin-left: -3vw;
-    }
-
-    .mobileTabs {
-        margin-top: -28vh;
-    }
-
-    .mobileTabs .changingResults span {
-        font-size: 18px;
-    }
-}
-
-@media screen and (max-width: 414px) {
-    .header {
-        height: 100vh;
-        width: 100vw;
-    }
-
-    .header .headerContent .titles h1 {
-        font-size: 30px;
-        margin-top: 10vh;
-        width: 110%;
-        margin-left: -3vw;
-    }
-
-    .header .headerContent .titles h2 {
-        font-size: 18px;
-        width: 110%;
-        margin-left: -3vw;
-    }
-
-    .header .headerContent form {
-        height: 51px;
-        width: 450px;
-        margin-left: -8vw;
-    }
-
-    .header .headerContent form .inputSearch::placeholder {
-        font-size: 1.4rem;
-    }
-
-    .header .headerContent form button img {
-        padding: 10px;
-    }
-
-    .mobileTabs .changingResults span {
-        font-size: 15px;
-    }
-}
-
-@media screen and (max-width: 375px) {
-    .header {
-        height: 130vh;
-        width: 100vw;
-    }
-
-    .header .headerContent .titles h1 {
-        font-size: 30px;
-        margin-top: 6vh;
-        width: 90%;
-        margin-left: 4vw;
-    }
-
-    .header .headerContent .titles h2 {
-        font-size: 22px;
-        width: 80%;
-        margin-left: 4vw;
-    }
-    
-    .header .headerContent form {
-        max-width: 350px;
-        min-width: 80px;
-        width: 100%;
-        height: 60px;
-        margin-left: 3vw;
-    }
-
-    .header .headerContent form button img {
-        padding: 15px;
-    }
-
-    .header .headerContent form .inputSearch::placeholder {
-        font-size: 1.7rem;
-    }
-
-    .mobileTabs {
-        margin-top: -25vh;
-    }
-
-    .mobileTabs .changingResults span {
-        font-size: 20px;
-    }
-}
-
-@media screen and (max-width: 320px) {
-    .header .headerContent form {
-        margin-top: 5vh;
-    }
-}
-
-@media screen and (max-width: 280px) {
-    .header {
         background-repeat: no-repeat;
         background-size: cover;
     }
 
     .header .headerContent {
-        width: 90%;
         justify-content: flex-start;
     }
 
     .header .headerContent .titles h1 {
-        font-size: 20px;
-        margin-top: 6vh;
-        width: 90%;
+        margin-top: 120px;
+        font-size: 1.9rem;
+        width: 100%;
     }
 
     .header .headerContent .titles h2 {
-        font-size: 16px;
-        width: 90%;
+        font-size: 0.9rem;
+        width: 100%;
     }
 
     .header .headerContent form {
-        max-width: 260px;
-        min-width: 80px;
-        width: 100%;
-        height: 60px;
+        margin: 70px auto 0;
     }
 
     .header .headerContent form button img {
         padding: 15px;
+        width: 50px;
     }
 
+    .header .headerContent form .inputSearch,
     .header .headerContent form .inputSearch::placeholder {
-        font-size: 1.7rem;
-    }
-
-    .mobileTabs .changingResults span {
-        font-size: 20px;
+        font-size: 1.1rem;
     }
 }

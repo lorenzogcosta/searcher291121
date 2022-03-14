@@ -24,11 +24,7 @@ const Home = () => {
     const [lastHashtag, setLastHashtag] = useState('hashtag'); // Keep the last hashtag searched for the searched list page
 
     useEffect(() => {
-        if (hashtagSearch.trim().length !== 0) {
-            searchTweets(hashtagSearch);
-        }
-
-    }, [hashtagSearch]);
+    }, []);
 
     // Get the date that the hashtag was searched
     function getDate() {
@@ -55,7 +51,7 @@ const Home = () => {
     // Save all info required after the hashtag was searched
     function saveSearch(hashtag) {
         axios.post(getAirtableURL(), {
-            "saved": [
+            "records": [
                 {
                     "fields": {
                         "Squad": "291121",
@@ -81,17 +77,20 @@ const Home = () => {
     // Return the hashtag and the info 
     function getReturnedInfo() {
         let returnedInfo = hashtagSearch;
-        returnedInfo = returnedInfo.replace(/#/g, '').trim().toLowerCase();
+        returnedInfo = returnedInfo
+            .replace(/#/g, '')
+            .trim()
+            .toLowerCase();
         return returnedInfo;
     }
 
     // Set the type of info we want once the user search for a hashtag
     function getTwitterURL(type, hashtag) {
         if (type === 'tweet') {
-            return `https://cors.eu.org/https://api.twitter.com/2/tweets/search/recent?query=${hashtag}%20has:hashtags%20-is:retweet%20-is:quote%20has:images&max_results=10&expansions=author_id,attachments.media_keys&user.fields=id,name,username,profile_image_url,url&media.fields=type,url,width,height&tweet.fields=source`;
+            return `https://cors.eu.org/https://api.twitter.com/2/tweets/search/recent?query=${hashtag} has:hashtags -is:retweet -is:quote -has:links -has:images&max_results=10&expansions=author_id,attachments.media_keys&user.fields=id,name,username,profile_image_url,url&media.fields=type,url,width,height&tweet.fields=source`;
         } else if (type === 'image') {
-            return `https://cors.eu.org/https://api.twitter.com/2/tweets/search/recent?query=${hashtag}%20has:hashtags%20-is:retweet%20-is:quote%20has:images&max_results=10&expansions=author_id,attachments.media_keys&user.fields=id,name,username,profile_image_url,url&media.fields=type,url,width,height&tweet.fields=source`;
-        }
+            return `https://cors.eu.org/https://api.twitter.com/2/tweets/search/recent?query=${hashtag} has:hashtags -is:retweet -is:quote has:images&max_results=10&expansions=author_id,attachments.media_keys&user.fields=id,name,username,profile_image_url,url&media.fields=type,url,width,height&tweet.fields=source`;
+        }                                                                                                                                                 
     }
 
     // Search for the tweets that are using the hashtag searched
@@ -105,20 +104,27 @@ const Home = () => {
         // Get the username of the people that tweeted using the hashtag searched
         axios.get(getTwitterURL(`image`, hashtag), headers).then(
             response => {
-                console.log("response", response)
-                let { data } = response.data
-                console.log(data)
+                const users = {};
+                response.data.includes.users.forEach(
+                    user => {
+                        users[String(user.id)] = user.username || '';
+                    }
+                );
 
+                const medias = {};
+                response.data.includes.media.forEach(
+                    media => {
+                        medias[String(media.media_key)] = media.url || noImage;
+                    }
+                );
 
-                // Get the tweet images infos that were tweeted using the hashtag searched
-                let results = {}
-               results = response.data.data.map(
+                const results = response.data.data.map(
                     tweet => {
                         return {
-                            "url": `https://twitter.com/user/status/${tweet.id}` || '',
-                            "image_url": setImagesResults[String(tweet.attachments.image_keys)],
+                            "url": `https://twitter.com/user/status/${tweet.id}`  || '',
+                            "image_url": medias[String(tweet.attachments.media_keys[0])],
                             "author": {
-                                "username": setImagesResults[String(tweet.author_id)]
+                                "username": users[String(tweet.author_id)]
                             }
                         };
                     }
@@ -131,24 +137,24 @@ const Home = () => {
         // Get all info required (name, username, image and tweet post)
         axios.get(getTwitterURL(`tweet`, hashtag), headers).then(
             response => {
-            
-                setTweetsResults(response.data.data.map(( user ) =>
+                const users = {};
+                response.data.includes.users.forEach(
                     user => {
-                        setTweetsResults[String(user.id)] = {
+                        users[String(user.id)] = {
                             "name": user.name || '',
                             "username": user.username || '',
-                            "profile_image_url": String(user.profile_image_url[0]).replace('normal', 'bigger') || noImage,
-                            "profile_url": `https://twitter.com/${user.username}` || ''
+                            "profile_image_url": String(user.profile_image_url).replace('normal', 'bigger')  || noImage,
+                            "profile_url": `https://twitter.com/${user.username}`  || ''
                         };
                     }
-                ));
+                );
 
-                let results = response.data.data.map(
-                    tweet => {
+                const results = response.data.data.map(
+                    postTweet => {
                         return {
-                            "content": tweet.text || '',
-                            "url": `https://twitter.com/user/status/${tweet.id}` || '',
-                            "author": TweetsResults[String(tweet.author_id)]
+                            "content": postTweet.text  || '',
+                            "url": `https://twitter.com/user/status/${postTweet.id}`  || '',
+                            "author": users[String(postTweet.author_id)]
                         };
                     }
                 );
@@ -175,11 +181,10 @@ const Home = () => {
         }
     }
 
-
     return (
         <>
-            <NavBar layout="home" />
             <div className={styles.header}>
+                <NavBar fixed="true" layout="home" />
                 <div className={styles.headerContent}>
                     <div className={styles.titles}>
                         <h1>Encontre hashtags de maneira fácil.</h1>
@@ -242,13 +247,12 @@ const Home = () => {
                                     imagesResults.map(
                                         (result, index) => (
                                             <li key={index}>
-
-                                                <ImagesResults result={result} />
+                                                <ImagesResults result={result}/>
                                             </li>
                                         )
                                     )
                                 }
-                                </ul>
+                            </ul>
                         )}
                     </div>
                     <div className={styles.tweetsResults}>
@@ -292,7 +296,7 @@ const Home = () => {
                     ) : (
                     <div className={styles.tweetsResults}>
                         {tweetsResults.length === 0 ? (
-                                <div>Carregando</div>
+                                <div></div>
                             ) : (
                                 <ul>
                                     {

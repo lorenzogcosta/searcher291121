@@ -1,16 +1,19 @@
 import React from 'react';
 import Footer from '../../../src/components-utils/footer/Footer';
 
-import AboutProject from './sub-components/AboutProject';
+import NavBar from '../../components-utils/header/NavBar';
 import AboutTeam from './sub-components/AboutTeam';
+
 import './About.css';
+
 const About = () => {
     return (
         <div className='about' >
-            <AboutProject/>
+            <NavBar layout="home"/>
+            
             <AboutTeam/>
-            <Footer />            
-        </div>       
+            <Footer/>
+        </div>
     )
 }
 

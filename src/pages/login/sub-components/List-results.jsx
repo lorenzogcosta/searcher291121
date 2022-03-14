@@ -5,9 +5,14 @@ import axios from 'axios';
 
 import './List-results.css' // Css Style \\
 
-export default function Results() {
+    export default function Results() {
+        useEffect(()=>{
+            
+        },) 
+  
 
     const [squad, setSquad] = useState([])
+
 
     function urlSearch() {
         return "https://api.airtable.com/v0/app6wQWfM6eJngkD4/Buscas?maxRecords=10&view=Grid%20view"
@@ -17,15 +22,16 @@ export default function Results() {
         headers: {
             "Authorization": "Bearer key2CwkHb0CKumjuM"
         }
-    })
-        .then(resp => {
+        
+    }).then(resp => {
 
-            let hash = resp.data.records
+    let hash = resp.data.records
 
-            setSquad(hash)
-            console.log(squad)
-        })
-        .catch(err => console.log('err' + err))
+    setSquad(hash)
+
+    }).catch(err => console.log('err' + err))
+
+    console.log(squad)
 
     return (
         <>
@@ -44,7 +50,7 @@ export default function Results() {
                         <tbody>{squad.reverse().map((hash) =>
                             <tr>
                                 <td className="tableLeft">{hash.fields.Hashtag}</td>
-                                <td>{hash.fields.Data}</td>
+                                <td>{hash.createdTime}</td>
                                 <td>{hash.fields.Hora}</td>
                             </tr>)
                         }
@@ -55,5 +61,4 @@ export default function Results() {
             <Footer />
         </>
     )
-
 }
