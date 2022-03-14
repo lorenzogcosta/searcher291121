@@ -29,8 +29,6 @@ const AboutProject = () => {
         .catch(error => console.log('error', error));    
       }, [])
   return (
-    <>
-    <Navbar layout="home" />
     <div className='about-project'>
       <main>
         <h1 className='about-tittle'>Sobre o projeto</h1>
@@ -41,7 +39,6 @@ const AboutProject = () => {
       <img className='about-image'
       src={ilustração} alt="Ilustração"></img>
     </div>
-    </>
   );
 };
 
