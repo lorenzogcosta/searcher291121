@@ -34,7 +34,7 @@ import './List-results.css' // Css Style \\
 
     return (
         <>
-            <NavBar layout="searchList" />
+            <NavBar fixed="true" layout="searchList" />
             <div className="resultsHero">
                 <div className="resultsList">
                     <h2>Buscas realizadas</h2>
@@ -49,8 +49,8 @@ import './List-results.css' // Css Style \\
                         <tbody>{squad.reverse().map((hash) =>
                             <tr>
                                 <td className="tableLeft">{hash.fields.Hashtag}</td>
+                                <td>{hash.fields.Data}</td>
                                 <td>{hash.createdTime}</td>
-                                <td>{hash.fields.Hora}</td>
                             </tr>)
                         }
                         </tbody>
