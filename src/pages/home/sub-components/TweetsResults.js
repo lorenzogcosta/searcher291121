@@ -9,7 +9,7 @@ const TweetsResults = ({ result }) => {
         <div className={styles.tweetsResults}>
             <div className={styles.tweetsResultsContent}>
                 <div className={styles.profileImages}>
-                    <img src={result.profile_image_url} alt="" />
+                    <img src={result.author.profile_image_url} alt="" />
                 </div>
                 <div className={styles.tweetsContainer}>
                     <h1>{result.author.name}<span className={styles.userName}>&nbsp;&nbsp;&nbsp;@{result.author.username}</span></h1>
