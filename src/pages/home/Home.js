@@ -26,21 +26,10 @@ const Home = () => {
     useEffect(() => {
     }, []);
 
-    // Get the date that the hashtag was searched
-    function getDate() {
-        const date = new Date();
-        const day = String(date.getDate()).padStart(2, '0');
-        const month = String(date.getMonth() + 1).padStart(2, '0');
-        const year = date.getFullYear();
-        return `${day}/${month}/${year}`;
-    }
-
-    // Get the hours and minutes that the hashtag was searched
-    function getHour() {
-        const date = new Date();
-        const hour = String(date.getHours()).padStart(2, '0');
-        const minute = String(date.getMinutes()).padStart(2, '0');
-        return `${hour}:${minute}`;
+    // Get the Timestamp that the hashtag was searched
+    function timeStamp() {
+        const now = new Date();
+        return now.getTime();
     }
 
     // Set the API link to save the hashtag infos required
@@ -56,8 +45,7 @@ const Home = () => {
                     "fields": {
                         "Squad": "291121",
                         "Hashtag": hashtag,
-                        "Data": getDate(),
-                        "Hora": getHour()
+                        "Data": timeStamp(),
                     }
                 }
             ]
@@ -90,7 +78,7 @@ const Home = () => {
             return `https://cors.eu.org/https://api.twitter.com/2/tweets/search/recent?query=${hashtag} has:hashtags -is:retweet -is:quote -has:links -has:images&max_results=10&expansions=author_id,attachments.media_keys&user.fields=id,name,username,profile_image_url,url&media.fields=type,url,width,height&tweet.fields=source`;
         } else if (type === 'image') {
             return `https://cors.eu.org/https://api.twitter.com/2/tweets/search/recent?query=${hashtag} has:hashtags -is:retweet -is:quote has:images&max_results=10&expansions=author_id,attachments.media_keys&user.fields=id,name,username,profile_image_url,url&media.fields=type,url,width,height&tweet.fields=source`;
-        }                                                                                                                                                 
+        }
     }
 
     // Search for the tweets that are using the hashtag searched
@@ -121,7 +109,7 @@ const Home = () => {
                 const results = response.data.data.map(
                     tweet => {
                         return {
-                            "url": `https://twitter.com/user/status/${tweet.id}`  || '',
+                            "url": `https://twitter.com/user/status/${tweet.id}` || '',
                             "image_url": medias[String(tweet.attachments.media_keys[0])],
                             "author": {
                                 "username": users[String(tweet.author_id)]
@@ -143,8 +131,8 @@ const Home = () => {
                         users[String(user.id)] = {
                             "name": user.name || '',
                             "username": user.username || '',
-                            "profile_image_url": String(user.profile_image_url).replace('normal', 'bigger')  || noImage,
-                            "profile_url": `https://twitter.com/${user.username}`  || ''
+                            "profile_image_url": String(user.profile_image_url).replace('normal', 'bigger') || noImage,
+                            "profile_url": `https://twitter.com/${user.username}` || ''
                         };
                     }
                 );
@@ -152,8 +140,8 @@ const Home = () => {
                 const results = response.data.data.map(
                     postTweet => {
                         return {
-                            "content": postTweet.text  || '',
-                            "url": `https://twitter.com/user/status/${postTweet.id}`  || '',
+                            "content": postTweet.text || '',
+                            "url": `https://twitter.com/user/status/${postTweet.id}` || '',
                             "author": users[String(postTweet.author_id)]
                         };
                     }
@@ -210,20 +198,20 @@ const Home = () => {
             <div className={styles.mobileTabs}>
                 <div className={styles.changingResults}>
                     <span
-                    onClick={() => setTabActive('tweets')}
+                        onClick={() => setTabActive('tweets')}
                         style={{
                             color: `${tabActive === 'tweets' ? '#72EFDB' : 'white'}`,
                         }}
                     >
-                    Tweets
+                        Tweets
                     </span>
                     <span
                         onClick={() => setTabActive('images')}
-                            style={{
-                                color: `${tabActive === 'images' ? '#72EFDB' : 'white'}`,
-                            }}
+                        style={{
+                            color: `${tabActive === 'images' ? '#72EFDB' : 'white'}`,
+                        }}
                     >
-                    Imagens
+                        Imagens
                     </span>
                 </div>
                 <div className={styles.tabs}>
@@ -239,15 +227,15 @@ const Home = () => {
                 <h2>Exibindo os 10 resultados mais recentes para #{lastHashtag}</h2>
                 <div className={styles.content}>
                     <div className={styles.imagesResults}>
-                    {imagesResults.length === 0 ? (
-                                <div></div>
-                            ) : (
-                                <ul>
+                        {imagesResults.length === 0 ? (
+                            <div></div>
+                        ) : (
+                            <ul>
                                 {
                                     imagesResults.map(
                                         (result, index) => (
                                             <li key={index}>
-                                                <ImagesResults result={result}/>
+                                                <ImagesResults result={result} />
                                             </li>
                                         )
                                     )
@@ -256,7 +244,46 @@ const Home = () => {
                         )}
                     </div>
                     <div className={styles.tweetsResults}>
-                    {tweetsResults.length === 0 ? (
+                        {tweetsResults.length === 0 ? (
+                            <div></div>
+                        ) : (
+                            <ul>
+                                {
+                                    tweetsResults.map(
+                                        (result, index) => (
+                                            <li key={index}>
+                                                <TweetsResults result={result} />
+                                            </li>
+                                        )
+                                    )
+                                }
+                            </ul>
+                        )}
+                    </div>
+
+                </div>
+                <div className={styles.contentResponsive}>
+                    {tabActive === 'images' ? (
+                        <div className={styles.imagesResults}>
+                            {imagesResults.length === 0 ? (
+                                <div></div>
+                            ) : (
+                                <ul>
+                                    {
+                                        imagesResults.map(
+                                            (result, index) => (
+                                                <li key={index}>
+                                                    <ImagesResults result={result} />
+                                                </li>
+                                            )
+                                        )
+                                    }
+                                </ul>
+                            )}
+                        </div>
+                    ) : (
+                        <div className={styles.tweetsResults}>
+                            {tweetsResults.length === 0 ? (
                                 <div></div>
                             ) : (
                                 <ul>
@@ -270,48 +297,9 @@ const Home = () => {
                                         )
                                     }
                                 </ul>
-                        )}
-                    </div>
-
-                </div>
-                <div className={styles.contentResponsive}>
-                    {tabActive === 'images' ? (
-                    <div className={styles.imagesResults}>
-                        {imagesResults.length === 0 ? (
-                                    <div></div>
-                                ) : (
-                        <ul>
-                        {
-                                        imagesResults.map(
-                                            (result, index) => (
-                                                <li key={index}>
-                                                    <ImagesResults result={result}/>
-                                                </li>
-                                            )
-                                        )
-                                    }
-                                </ul>
-                        )}
-                    </div>
-                    ) : (
-                    <div className={styles.tweetsResults}>
-                        {tweetsResults.length === 0 ? (
-                                <div></div>
-                            ) : (
-                                <ul>
-                                    {
-                                        tweetsResults.map(
-                                            (result, index) => (
-                                                <li key={index}>
-                                                    <TweetsResults result={result}/>
-                                                </li>
-                                            )
-                                        )
-                                    }
-                                </ul>
                             )}
-                    </div>
-                    )}                    
+                        </div>
+                    )}
                 </div>
             </div>
             <Footer />
