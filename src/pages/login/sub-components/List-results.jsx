@@ -5,32 +5,60 @@ import axios from 'axios';
 
 import './List-results.css' // Css Style \\
 
-    export default function Results() {
-        useEffect(()=>{
-            
-        },) 
-  
-
+export default function Results() {
     const [squad, setSquad] = useState([])
 
-
     function urlSearch() {
-        return "https://api.airtable.com/v0/app6wQWfM6eJngkD4/Buscas?maxRecords=10&view=Grid%20view"
+        return `https://api.airtable.com/v0/app6wQWfM6eJngkD4/Buscas?filterByFormula=({Squad}='291121')&maxRecords=30&pageSize=30&sort%5B0%5D%5Bfield%5D=Data&sort%5B0%5D%5Bdirection%5D=desc`
     }
 
-    axios.get(urlSearch(), {
-        headers: {
-            "Authorization": "Bearer key2CwkHb0CKumjuM"
+    function formatDate(date) {
+        let _date = new Date(date);
+        let day = _date.getDate();
+        if (day < 10) {
+            day = '0' + day;
         }
-        
-    }).then(resp => {
+        let month = parseInt(_date.getMonth() + 1);
+        if (month < 10) {
+            month = '0' + month;
+        }
+        let year =  _date.getFullYear()
+        return day + "/" + month + "/" + year;
+    }
 
-    let hash = resp.data.records
+    function formatHour(date) {
+        let _day = new Date(date);
+        let hour = _day.getHours();
+        if (hour < 10) {
+            hour = '0' + hour;
+        }
+        let minutes = _day.getMinutes();
+        if (minutes < 10) {
+            minutes = '0' + minutes;
+        }
+        return hour + ":" + minutes;
+    }
 
-    setSquad(hash)
+    useEffect(() => {
+        axios.get(urlSearch(), {
+            headers: {
+                "Authorization": "Bearer key2CwkHb0CKumjuM"
+            }
 
-    }).catch(err => console.log('err' + err))
-
+        }).then(
+            resp => {
+                let hash = resp.data.records.map(
+                    record => {
+                        return {
+                            "hashtag": record.fields.Hashtag,
+                            "data": record.fields.Data
+                        }
+                    }
+                )
+                setSquad(hash);
+            }
+        )
+    }, []);
 
     return (
         <>
@@ -46,13 +74,13 @@ import './List-results.css' // Css Style \\
                                 <th style={{ WebkitBorderTopRightRadius: "14px" }}>Hora</th>
                             </tr>
                         </thead>
-                        <tbody>{squad.reverse().map((hash) =>
+                        <tbody>{squad.map((hash) =>
                             <tr>
-                                <td className="tableLeft">{hash.fields.Hashtag}</td>
-                                <td>{hash.fields.Data}</td>
-                                <td>{hash.createdTime}</td>
-                            </tr>)
-                        }
+                                <td className="tableLeft">#{hash.hashtag}</td>
+                                <td>{formatDate(hash.data)}</td>
+                                <td>{formatHour(hash.data)}</td>
+                            </tr>
+                        )}
                         </tbody>
                     </table>
                 </div>
