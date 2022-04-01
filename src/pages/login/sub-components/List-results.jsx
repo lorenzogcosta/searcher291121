@@ -9,7 +9,7 @@ export default function Results() {
     const [squad, setSquad] = useState([])
 
     function urlSearch() {
-        return `https://api.airtable.com/v0/app6wQWfM6eJngkD4/Buscas?filterByFormula=({Squad}='291121')&maxRecords=30&pageSize=30&sort%5B0%5D%5Bfield%5D=Data&sort%5B0%5D%5Bdirection%5D=desc`
+        return `https://api.airtable.com/v0/app6wQWfM6eJngkD4/Buscas?filterByFormula=({Squad}='291121')&maxRecords=90&pageSize=10&sort%5B0%5D%5Bfield%5D=Data&sort%5B0%5D%5Bdirection%5D=desc`
     }
 
     function formatDate(date) {
