@@ -135,33 +135,51 @@
 /* ---------------Media Queries--------------- */
 
 @media only screen and (max-width: 1400px) {
-    .header .headerContent h1 {
+    .header .headerContent .titles h1 {
         width: 60%;
     }
 
-    .header .headerContent h2 {
+    .header .headerContent .titles h2 {
         width: 50%;
     }
 }
 
 @media only screen and (max-width: 1024px) {
+
+    .header {
+        height: 90vh;
+        width: 100vw;
+        background: url(../../assets/hero-bg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
     .homeContent h2 {
         padding-top: 100px;
+    }
+
+    .header .headerContent .titles h1 {
+        width: 73%;
+    }
+
+    .header .headerContent .titles h2 {
+        width: 61%;
     }
     
 }
 
 @media only screen and (max-width: 1000px) {
-    .header .headerContent h1 {
-        width: 80%;
-    }
-
-    .header .headerContent h2 {
-        width: 70%;
-    }
 
     .homeContent .content {
         width: 100%;
+    }
+
+    .header .headerContent .titles h1 {
+        width: 98%;
+    }
+
+    .header .headerContent .titles h2 {
+        width: 81%;
     }
 
     .homeContent .content .imagesResults {

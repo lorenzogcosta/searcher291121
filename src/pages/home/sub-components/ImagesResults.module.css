@@ -192,10 +192,10 @@
 
 @media only screen and (max-width: 863px) {
     .imagesResults {
-        width: 140px;
-        height: 140px;
-        min-width: 140px;
-        min-height: 140px;
+        width: 130px;
+        height: 130px;
+        min-width: 130px;
+        min-height: 130px;
     }
 }
 
