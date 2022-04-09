@@ -1,5 +1,4 @@
 import React, { useEffect,useState } from "react";
-import Navbar from '../../../components-utils/header/NavBar'; // Header With Navigates
 
 
 //import Ilustração

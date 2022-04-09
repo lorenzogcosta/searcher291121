@@ -3,11 +3,6 @@ import React, { useEffect, useState } from 'react'
 //componentes
 import AboutMembers from './AboutMembers';
 
-//Imagens
-import Joane from '../../../assets/profile/joane.jpg';
-import Esther from '../../../assets/profile/Esther.jpg';
-import Lorenzo from '../../../assets/profile/Lorenzo.jpg';
-
 const AboutTeam = () => {
     const [infoTeam, setInfoTeam] = useState(null)
 
