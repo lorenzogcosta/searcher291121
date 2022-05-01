@@ -13,9 +13,10 @@ body {
 .loginArea {
     display: flex;
     background-image: url('../../assets/mobile-hero-bg.jpg') ;
-    background-repeat:no-repeat;   
-    background-size: 100% 100%;
-    height:900px;   
+    height: 90vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
 }
 
 
@@ -118,10 +119,11 @@ form div{
     
 
     .loginArea{
-        background-image: url('../../assets/hero-bg.jpg');
+        height: 90vh;
+        width: 100vw;
+        background: url(../../assets/hero-bg.jpg);
+        background-repeat: no-repeat;
         background-size: 100% 100%;
-        margin: 0;
-        height: 1024px;
     }
 
     .formLogin {
