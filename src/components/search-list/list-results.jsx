@@ -18,7 +18,7 @@ export default function results() {
                     <tr>
                         <td className="tableLeft">#hashtagname</td>
                         <td>25/02</td>
-                        <td>09:30</td>
+                        <td>09:31</td>
                     </tr>
                     <tr>
                         <td className="tdBorder" colSpan="3"></td>
